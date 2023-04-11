@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08915cc3-66d0-4bb3-94d2-f7397ba1d6b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/classes/AnimationClass.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/classes/BotClass.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/classes/PlayerClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Project-DSA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project-DSA.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classes/ButtonClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/ButtonClass.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classes/NetworkClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/NetworkClass.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classes/ShipClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/ShipClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/PlayerClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/PlayerClass.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Bot-class",
+    "git-widget-placeholder": "dev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

@@ -64,13 +64,33 @@ playerClass.prototype.drawGridActual = () => {
     if (this.playerRole === 2)
         indent = 700;
 
-    for (i = 0; i < this.shipName.length; i++) {
-        for (j = 0; j < this.shipName[i].size; j++) {
+    for (i = 0; i < this.shipType.length; i++) {
+        for (j = 0; j < this.shipType[i].size; j++) {
             noFill();
             rect(indent + i * 85 + 40 + 20 * j, 40, 20, 25);
         }
         for (j = 0; j < this.currLife[i]; j++) {
+            fill(this.shipType[i].color.r, this.shipType[i].color.g, this.shipType[i].color.b);
+            rect(indent + i * 85 + 40 + 20 * j, 40, 20, 25);
+        }
+    }
 
+    fill(64, 54, 255);
+    for (i = 1; i <= 10; i++) {
+        for (j = 1; j <= 10; j++) {
+            fill (64, 54, 255);
+            rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+
+            // Draw the ships on the map
+            if (this.gridActual[i - 1][j - 1] > 0) {
+                fill(this.shipType[this.gridActual[i - 1][j - 1] - 1].color.r, this.shipType[this.gridActual[i - 1][j - 1] - 1].color.g, this.shipType[this.gridActual[i - 1][j - 1] - 1].color.b);
+                ellipse(indent + 65 + 30 * i, 65 + 30 * j, 25, 25);
+            }
+
+            if (this.gridActual[i - 1][j - 1] === ISLAND) {
+                fill(255, 212, 128);
+                rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+            }
         }
     }
 }
