@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08915cc3-66d0-4bb3-94d2-f7397ba1d6b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Project-DSA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project-DSA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/sketch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/classes/PlayerClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/PlayerClass.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +42,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\huyng\OneDrive - VietNam National University - HCM INTERNATIONAL UNIVERSITY\Documents\GitHub\Project-DSA\config" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
