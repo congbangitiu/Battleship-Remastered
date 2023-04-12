@@ -363,7 +363,7 @@ playerClass.prototype.play = function (playerRole) {
                 }
             }
         }
-        // if above if statement dosnt return than extra shot 
+        // if above if statement doesn't return than extra shot
     }
     return 0;
 };
