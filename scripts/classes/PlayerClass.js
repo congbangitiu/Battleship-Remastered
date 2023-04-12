@@ -94,7 +94,6 @@ playerClass.prototype.drawGridActual = () => {
                 fill(255, 212, 128);
                 rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
             }
-
         }
     }
 };
@@ -124,7 +123,6 @@ player.prototype.drawGridHidden = function () {
             }
             rect(indent + i * 85 + 40 + 20 * j, 40, 20, 25);
         }
-
     }
 
 
