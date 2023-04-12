@@ -1,9 +1,9 @@
 const playerClass = (playerName, playerRole) => {
     // Inherits objects from Network Class
-    NetworkClass.call(this);
+    networkClass.call(this);
 
     // Inherits objects from Ship Class
-    ShipClass.call(this);
+    shipClass.call(this);
 
     // Initialize the hidden grid 10x10.
     // Goal: When we hover the mouse, there will be the animation to change the displayed color of each element (each grid)

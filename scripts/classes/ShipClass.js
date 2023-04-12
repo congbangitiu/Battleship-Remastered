@@ -1,4 +1,4 @@
-const ShipClass = () => {
+const shipClass = () => {
     this.numberOfShips = 5; // Initialize number of Ships
 
     this.win = false; // Set up the game begin -> Not win (First condition)
