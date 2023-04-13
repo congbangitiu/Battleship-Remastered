@@ -46,3 +46,57 @@ botClass.prototype.drawProbabilityDensityGrid = () => {
     }
     return 0;
 }
+
+botClass.prototype.find = (x, y, horiz) => {
+    let i, set = 0;
+
+    if (horiz) {
+        for (i = 0; i < this.target_locked_x.length; i++) {
+            if (this.target_locked_x[i] !== x)
+                return 0;
+            if (this.target_locked_y[i] >= y && (this.target_locked_x[i] <= x + this.curr_big_ship))
+                set++;
+        }
+    }
+    else {
+        for (i = 0; i < this.target_locked_x.length; i++) {
+            if (this.target_locked_y[i] !== y)
+                return 0;
+            if (this.target_locked_x[i] >= x && (this.target_locked_x[i] <= x + this.curr_big_ship))
+                set++;
+        }
+    }
+
+    if (set === this.target_locked_x.length)
+        return 1;
+
+    return 0;
+}
+
+botClass.prototype.gridFilter = (i, j, horiz, currShip) => {
+    let k;
+
+    if (horiz) {
+        for (k = 0; k < currShip; k++) {
+            if (this.grid[i][j + k] <= 0)
+                return 0;
+
+            if (!this.chainFire) {
+                if (this.grid[i][j + k] === 1)
+                    return 0;
+            }
+        }
+    }
+    else {
+        for (k = 0; k < currShip; k++){
+            if (this.grid[i + k][j] <= 0)
+                return 0;
+            if (!this.chainFire) {
+                if (this.grid[i + k][j] === 1)
+                    return 0;
+            }
+        }
+    }
+
+    return 1;
+}
