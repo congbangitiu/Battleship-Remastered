@@ -157,3 +157,24 @@ botClass.prototype.smallestAliveShip = () => {
     }
     return 0;
 }
+
+botClass.prototype.initialize = () => {
+    for (let i = 0; i < 10; i++)
+        this.grid[i] = new Array(10);
+
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+            if (this.gridHidden[i][j] === -1 || this.gridHidden[i][j] === ISLAND)
+                this.grid[i][j] = 0;
+            else if (this.gridHidden[i][j] === 1)
+                this.grid[i][j] = 1;
+            else
+                this.grid[i][j] = 2;
+        }
+    }
+
+    while (this.stack_x.length > 0) {
+        this.stack_x.pop();
+        this.stack_y.pop();
+    }
+}
