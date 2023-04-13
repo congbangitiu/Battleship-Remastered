@@ -128,3 +128,32 @@ botClass.prototype.largestAliveShip = () => {
         }
     }
 }
+
+botClass.prototype.smallestAliveShip = () => {
+    let i;
+
+    // Find the current smallest ship
+    for (i = 0; i < 5; i++) {
+        if (this.currLife[i] !== 0) {
+            switch (i) {
+                case 0:
+                    i = 2;
+                    break;
+                case 1:
+                    i = 3;
+                    break;
+                case 2:
+                    i = 3;
+                    break;
+                case 3:
+                    i = 4;
+                    break;
+                case 4:
+                    i = 5;
+                    break;
+            }
+            return i;
+        }
+    }
+    return 0;
+}
