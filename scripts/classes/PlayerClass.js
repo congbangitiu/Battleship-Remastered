@@ -126,22 +126,16 @@ playerClass.prototype.drawGridHidden = () => {
 
 
     fill(64, 54, 255);
-
     for (i = 1; i <= 10; i++) {
-
         for (j = 1; j <= 10; j++) {
-
             // block not yet hit
             //   if(this.gridHidden[i-1][j-1] === 0){
-
             fill(64, 54, 255);
             if(densityLens === false || this.playerRole !== 2){
-
                 if(this.gridHidden[i - 1][j - 1] === ISLAND){
                     //sandy beach colour
                     fill(255, 212, 128);
                 }
-    
                 rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
             }
 
@@ -176,14 +170,12 @@ playerClass.prototype.arrangeShip = () => {
         if (size === 1 || size === 2) {
             num++;
         }
-
         if (floor(random(0, 2))) { // horizontal arrangement trigger       
             while (1) {
                 a = floor(random(0, 10));
                 b = floor(random(0, 11 - num));
 
                 for (i = 0; i < num; i++) {
-
                     if (this.gridActual[a][b + i] !== 0) {
                         shipOverlapped = true;
                         // break and search for a non-overlapping spot again 
@@ -207,7 +199,6 @@ playerClass.prototype.arrangeShip = () => {
                 }
                 shipOverlapped = false;
             }
-
         }
         else {
             while (1) {
@@ -357,7 +348,6 @@ playerClass.prototype.play = (playerRole) => {
                         //player1.gridHidden[i-1][j-1]=-1;
                         mouseIsPressed = false;
                     }
-
                 }
             }
         }
