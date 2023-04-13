@@ -100,3 +100,31 @@ botClass.prototype.gridFilter = (i, j, horiz, currShip) => {
 
     return 1;
 }
+
+botClass.prototype.largestAliveShip = () => {
+    let i = 0;
+
+    // Find the current biggest alive ship of component
+    for (i = 4; i >= 0; i--) {
+        if (this.currLife[i] !== 0) {
+             switch (i) {
+                 case 0:
+                     i = 2;
+                     break;
+                 case 1:
+                     i = 3;
+                     break;
+                 case 2:
+                     i = 3;
+                     break;
+                 case 3:
+                     i = 4;
+                     break;
+                 case 4:
+                     i = 5;
+                     break;
+             }
+             return i;
+        }
+    }
+}
