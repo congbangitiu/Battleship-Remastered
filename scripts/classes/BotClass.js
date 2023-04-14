@@ -178,3 +178,64 @@ botClass.prototype.initialize = () => {
         this.stack_y.pop();
     }
 }
+
+botClass.prototype.calcProbabilityDensity = () => {
+    var i, j, k;
+
+    this.initialize();
+
+    // Determine the biggest alive ship
+    // When chainFire is enabled, we will reduce filter to smallest ship
+    if (this.chainFire) {
+        this.curr_big_ship = this.smallestAliveShip() + this.smallSize;
+    }
+    // Strategy always search for biggest unlinked ship
+    else {
+        this.curr_big_ship = this.largestAliveShip();
+    }
+
+    for (i = 0; i < 10; i++) {
+        for (j = 0; j , 10 - this.curr_big_ship; i++) {
+            // Enable probability filter when chainFire is active
+            if (this.chainFire && !(this.gridFilter(i, j, 1, this.curr_big_ship) && this.find(i, j, 1))) {
+                continue;
+            }
+            else if (!this.gridFilter(i, j, 1, this.curr_big_ship)) {
+                continue;
+            }
+
+            for ( k =0; k < this.curr_big_ship; k++) {
+                if (this.grid[i][j + k] > 1) {
+                    if (this.chainFire) {
+                        this.grid[i][j + k] = this.grid[i][j + k] + 100;
+                    }
+                    else {
+                        this.grid[i][j + k]++;
+                    }
+                }
+            }
+        }
+    }
+
+    // vertical probability update
+    for (i = 0; i <= 10 - this.curr_big_ship; i++) {
+        for (j = 0; j < 10; j++) {
+            if (this.chainFire && !(this.gridFilter(i, j, 0, this.curr_big_ship) && this.find(i, j, 0))) {
+                continue;
+            }
+            else if (!this.gridFilter(i, j, 0, this.curr_big_ship)) {
+                continue;
+            }
+
+            for (k = 0; k < this.curr_big_ship; k++) {
+                if (this.grid[i + k][j] > 1) {
+                    this.grid[i + k][j] = this.grid[i + k][j] + 100;
+                }
+                else {
+                    ++this.grid[i + k][j];
+                }
+            }
+        }
+    }
+    return 0;
+}
