@@ -253,3 +253,42 @@ botClass.prototype.maxProbability = () => {
     return max;
 }
 
+botClass.prototype.play = () => {
+    let botHitX = 0, botHiyY = 0;
+
+    if (this.checkShipLifeStatus()) {
+        return true;
+    }
+
+    if ((this.missed_target_x.length > 0) && (!this.chainFire)) {
+        this.chainFire = true;
+        const tempX = this.missed_target_x.pop();
+        const tempY = this.missed_target_y.pop();
+
+        // Give lock high probability
+        this.grid[tempX][tempY] = this.grid[tempX][tempY] + 20;
+        this.target_locked_x.push(tempX);
+        this.target_locked_y.push(tempY);
+        this.hitShipType = this.gridActual[tempX][tempY];
+    }
+
+    this.calcProbabilityDensity();
+
+    let max = this.maxProbability();
+
+    while (this.stack_x.length > 0) {
+        this.stack_x.pop();
+        this.stack_y.pop();
+    }
+
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+            if (this.grid[i][j] === max) {
+                if (this.chainFire === false || this.target_locked_x[0] === i || this.target_locked_y[0] === j) {
+                    this.stack_x.push(i);
+                    this.stack_y.push(j);
+                }
+            }
+        }
+    }
+}
