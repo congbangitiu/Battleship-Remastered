@@ -254,7 +254,7 @@ botClass.prototype.maxProbability = () => {
 }
 
 botClass.prototype.play = () => {
-    let botHitX = 0, botHiyY = 0;
+    let botHitX = 0, botHitY = 0;
 
     if (this.checkShipLifeStatus()) {
         return true;
@@ -291,4 +291,66 @@ botClass.prototype.play = () => {
             }
         }
     }
+
+    // Selects target randomly from the highest density block
+    const randomNumber = floor(random(0, this.stack_x.length));
+
+    botHitX = this.stack_x[randomNumber];
+    botHitY = this.stack_y[randomNumber];
+
+    while (this.stack_x.length > 0) {
+        this.stack_x.pop();
+        this.stack_y.pop();
+    }
+
+    // If shot missed execute this
+    if ((this.gridActual[botHitX][botHitY] === 0) && (this.gridHidden[botHitX][botHitY] === 0)) {
+        this.gridHidden[botHitX][botHitY] = -1;
+        playerSwitching = true;
+        this.turn++;
+    }
+
+    // If shot hit execute this
+    else if ((this.gridActual[botHitX][botHitY] > 0) && (this.gridHidden[botHitX][botHitY] === 0)) {
+        // Reduce ships life which is hit
+        // Mark as hit on hidden grid
+        this.gridHidden[botHitX][botHitY] = 1;
+        this.currLife[this.gridActual[botHitX][botHitY] - 1]--;
+
+        if (this.chainFire) {
+            // If we hit another ship then add its coordinate to stack
+            if (this.hitShipType !== this.gridActual[botHitX][botHitY]) {
+                this.missed_target_x.push(botHitX);
+                this.missed_target_y.push(botHitY);
+            }
+            else if (this.currLife[this.gridActual[botHitX][botHitY] - 1] > 0) {
+                this.target_locked_x.push(botHitX);
+                this.target_locked_y.push(botHitY);
+
+                if (this.smallestAliveShip() <= this.target_locked_x.length) {
+                    this.smallSize++;
+                }
+            }
+            // If ship sunk execute this else
+            else {
+                while (this.target_locked_x.length > 0) {
+                    this.target_locked_x.pop();
+                    this.target_locked_y.pop();
+                }
+                this.smallSize = 0;
+                this.hitShipType = 0;
+                this.chainFire = false;
+            }
+        }
+        // If chain fire is off
+        else {
+            this.hitShipType = this.gridActual[botHitX][botHitY];
+            this.target_locked_x.push(botHitX);
+            this.target_locked_y.push(botHitY);
+
+            this.chainFire = true;
+        }
+    }
+
+    return 0;
 }
