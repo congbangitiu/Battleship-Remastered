@@ -354,3 +354,21 @@ botClass.prototype.play = () => {
 
     return 0;
 }
+
+botClass.prototype.destroy = () => {
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+            this.grid[i][j] = 0;
+        }
+    }
+
+    while (this.target_locked_x.length > 0) {
+        this.target_locked_x.pop();
+        this.target_locked_y.pop();
+    }
+
+    while (this.missed_target_x.length > 0) {
+        this.missed_target_x.pop();
+        this.missed_target_y.pop();
+    }
+}
