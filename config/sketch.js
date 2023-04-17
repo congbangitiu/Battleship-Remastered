@@ -49,3 +49,26 @@ const initializeRandomMap = () => {
         }
     }
 };
+
+initializeRandomMap();
+
+for (let i = 0; i < 10; i++) {
+    for (let j = 0; j < 10; j++) {
+        randomMap[i][j] = 0;
+    }
+}
+
+const ISLAND = -2;
+
+// Creating statistics table
+let statTable = new Array(3);
+for (let i = 0; i < statTable.length; i++) {
+    statTable[i] = new Array(6);
+}
+
+// Initializing statistic table
+for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 6; j++) {
+        statTable[i][j] = 0;
+    }
+}
