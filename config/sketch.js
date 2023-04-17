@@ -20,20 +20,32 @@ const touchStated = () => {
 /**
  * Global variables
  */
-var menu = true;
-var credits = false;
-var instructions = false;
-var multiPlayerOffline = false;
-var multiPlayerOnline = false;
-var statistics = false;
-var winState = false;
-var makeNewMap = false;
+let menu = true;
+let credits = false;
+let instructions = false;
+let multiPlayerOffline = false;
+const multiPlayerOnline = false;
+let statistics = false;
+const winState = false;
+let makeNewMap = false;
 
-var playerOneTurn = true;
-var singlePlayer = false;
-var singlePlayerWin = false;
-var multiPlayerWin = false;
-var densityLens = false;
-var statTableUpdated = false;
-var playerSwitching = true;
-var playerSwitchingIterator = 0;
+let playerOneTurn = true;
+let singlePlayer = false;
+const singlePlayerWin = false;
+const multiPlayerWin = false;
+const densityLens = false;
+const statTableUpdated = false;
+let playerSwitching = true;
+const playerSwitchingIterator = 0;
+
+const randomMap = new Array(10);
+for (let i = 0; i < randomMap; i++)
+    randomMap[i] = new Array(10);
+
+const initializeRandomMap = () => {
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+            randomMap[i][j] = 0;
+        }
+    }
+};
