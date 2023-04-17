@@ -1,4 +1,4 @@
-class AnimationClass {
+class animationClass {
     constructor() {
         this.submarineX1 = 1300;
         this.submarineY1 = 230;
