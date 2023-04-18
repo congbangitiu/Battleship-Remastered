@@ -362,9 +362,7 @@ playerClass.prototype.deployShipsReceivedFromServer = () => {
     for (i = 0; i < 5; i++) {
         // ship is arranged horizontally
         if (this.ship[i].beign.x === this.ship[i].end.x) {
-
             for (j = 0; j < this.shipType[i].size; j++) {
-
                 this.gridActual[this.ship[i].begin.x][this.ship[i].begin.y + j] = 1;
             }
         }
@@ -372,7 +370,6 @@ playerClass.prototype.deployShipsReceivedFromServer = () => {
         //ship is arranged vertically
         else {
             for (j = 0; j < this.shipType[i].size; j++) {
-
                 this.gridActual[this.ship[i].begin.x + j][this.ship[i].begin.y] = 1;
             }
         }

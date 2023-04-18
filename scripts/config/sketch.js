@@ -17,9 +17,9 @@ const touchStated = () => {
     mouseIsPressed = true;
 };
 
-/**
- * Global variables
- */
+
+//Global variables
+ 
 let menu = true;
 let credits = false;
 let instructions = false;
