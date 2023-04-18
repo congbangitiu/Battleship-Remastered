@@ -6,7 +6,7 @@ const instructionState = () => {
     rect(100,100,500,350,20);
     fill(255,255,255);
     textSize(17);
-    text("Five ships are placed on each player's map, and the players take turns playing guess-fire on the other player's map until one of them sinks every ship to claim victory. If a player hits an opponent's ship, they gain an extra turn. BOT employs a probability density map to determine the ship's coordinates.\n  1. Press 'AUTO' to place your ships in a random order on the map. Press 'AUTO' again to change the order of your ships.\n  2. Click 'CONFIRM' to launch the game.\n  3. IMPORTANT: Online multiplayer is still in its infancy.", 125, 125, 450, 300);
+    text("Five ships are placed on each player's map, and the players take turns playing guess-fire on the other player's map until one of them sinks every ship to claim victory. If a player hits an opponent's ship, they gain an extra turn. BOT employs a probability density map to determine the ship's coordinates.\n\n\n  1. Press 'AUTO' to place your ships in a random order on the map. Press 'AUTO' again to change the order of your ships.\n  2. Click 'CONFIRM' to launch the game.\n  3. IMPORTANT: Online multiplayer is still in its infancy.", 125, 125, 450, 300);
 
     // Create button
     var backButton = new buttonClass("back", 225, 500);
