@@ -10,4 +10,21 @@ const instructionState = () => {
 
     // Create button
     /* This part has not done */
+    let backButton = new button("back", 255, 500);
+    backButton.draw();
+
+    // If the mouse is in the same place as the button
+    if (mouseX > backButton.x && mouseX < backButton.x + backButton.width && mouseY > backButton.y && mouseY < backButton.y + backButton.height) {
+        // Check to see if the mouse is pressed
+        if (!mouseIsPressed) {
+            // If mouse is not pressed then light up button
+            backButton.lightUpButton();
+        }
+
+        if (mouseIsPressed) {
+            // If mouse is pressed then go to menu
+            instructions = false;
+            menu = true;
+        }
+    }
 }
