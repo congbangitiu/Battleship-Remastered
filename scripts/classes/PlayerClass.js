@@ -1,4 +1,4 @@
-const playerClass = (playerName, playerRole) => {
+var playerClass = (playerName, playerRole) => {
     // Inherits objects from Network Class
     networkClass.call(this);
 

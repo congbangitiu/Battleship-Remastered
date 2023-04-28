@@ -1,19 +1,19 @@
-const setup = () => {
+let setup = () => {
     createCanvas(1300, 550);
     frameRate(50);
 }
 
 let mouseIsPressed = false;
 
-const mouseReleased = () => {
+let mouseReleased = () => {
     mouseIsPressed = false;
 };
 
-const mousePressed = () => {
+let mousePressed = () => {
     mouseIsPressed = true;
 };
 
-const touchStated = () => {
+let touchStated = () => {
     mouseIsPressed = true;
 };
 
@@ -24,25 +24,25 @@ let menu = true;
 let credits = false;
 let instructions = false;
 let multiPlayerOffline = false;
-const multiPlayerOnline = false;
+let multiPlayerOnline = false;
 let statistics = false;
-const winState = false;
+let winState = false;
 let makeNewMap = false;
 
 let playerOneTurn = true;
 let singlePlayer = false;
-const singlePlayerWin = false;
-const multiPlayerWin = false;
-const densityLens = false;
-const statTableUpdated = false;
+let singlePlayerWin = false;
+let multiPlayerWin = false;
+let densityLens = false;
+let statTableUpdated = false;
 let playerSwitching = true;
-const playerSwitchingIterator = 0;
+let playerSwitchingIterator = 0;
 
-const randomMap = new Array(10);
+let randomMap = new Array(10);
 for (let i = 0; i < randomMap; i++)
     randomMap[i] = new Array(10);
 
-const initializeRandomMap = () => {
+let initializeRandomMap = () => {
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
             randomMap[i][j] = 0;

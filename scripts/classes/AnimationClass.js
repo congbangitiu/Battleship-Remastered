@@ -12,8 +12,8 @@ class animation {
     
     drawPebbles(x, y) {
         for (let i = 0; i < 450; i++) {
-            const randomX = x + random(0, 1300);
-            const randomY = y + random(670, 750);
+            let randomX = x + random(0, 1300);
+            let randomY = y + random(670, 750);
             fill(random(0, 300), random(0, 200), random(0, 100));
             ellipse(randomX, randomY, 15, 10);
         }
