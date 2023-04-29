@@ -12,3 +12,40 @@ let creditButton = new buttonClass("credits", posX + 100, posY + 240);
 let statisticsButton = new buttonClass("statistics", posX + 100, posY + 290);
 
 let animate = new animation();
+
+/**
+ * Function is executed 60 frames per second.
+ * It invokes different gameStates based on values
+ */
+
+let draw = () => {
+    animate.animationPlay();
+
+    if (densityLens) {
+        background(0, 300, 0, 100);
+    }
+    if (menu === true) {
+        menuState();
+    }
+    else if (makeNewMap === true) {
+        newMapState();
+    }
+    else if (singlePlayer === true) {
+        singlePlayerState();
+    }
+    else if (multiPlayerOnline === true) {
+        multiPlayerOnlineState();
+    }
+    else if (instructions === true) {
+        instructionState();
+    }
+    else if (multiPlayerOffline === true) {
+        multiPlayerOfflineState();
+    }
+    else if (statistics === true) {
+        statisticsState();
+    }
+    else if (winState === true) {
+        winStateCall();
+    }
+};
