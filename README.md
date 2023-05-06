@@ -2,10 +2,14 @@
 <img src="./assets/img/banner.gif" alt="Banner">
 </div>
 
+<div align="center">
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+
+</div>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -42,7 +46,9 @@
 </div>
 
 <div style="text-align:justify">
+
 We took an Algorithm & Data Structures course and the final project was creating a Battleship game. It was challenging but also incredibly fun! We had to implement different algorithms for generating ships and randomizing their placement on a grid, along with logic that could handle both human and computer input. That was just the tip of the iceberg though - we also had to handle game states and error checking, all while optimizing for speed and efficiency. One thing I loved about this project was how it brought together everything we learned throughout the course - from different data structures like linked lists to more advanced algorithms like minimax. Plus, getting to play against friends (or the computer) once we finished coding made all the hard work completely worth it!
+
 </div>
 
 ### Team Members :couplekiss_man_man:
@@ -74,18 +80,20 @@ We took an Algorithm & Data Structures course and the final project was creating
 ### Motivation :mechanical_arm:
 
 <div style="text-align:justify">
+
 Motivation is what drives us to succeed in life, and when it comes to computer science, algorithms & data structures provide the necessary tools to achieve that success. The classic game of Battleship relies heavily on these concepts as players must efficiently search through a grid of potential targets while maximizing their chances of hitting the opponent's ships. Optimization is key in this game, as slow searching can mean the difference between victory and defeat. This is where algorithms come into play - by implementing sophisticated searching techniques such as binary search or A* search, players can quickly traverse the board and locate enemy ships with minimal effort. Likewise, data structures like hash tables assist in storing player moves for easy retrieval later on. In combining these methods with strategic planning and intuition, players can become masters of modern-day Battleship strategy.
+
 </div>
 
 ### Task Allocation :ok_man:
 
 | Order | Task                                    |  Person   | Contribution (%) |
 | :---- | :-------------------------------------- | :-------: | :----------: |
-| 1     |                  |  Cong Bang  |      20      |
-| 2     |                              | Minh Vu |      20      |
-| 3     |                     | Quang Dieu |      20      |
-| 4     |  | Anh Tu  |      20      |
-| 4     |  | Nhat Huy  |      20      |
+| 1     | Player class, Menu state      |  Cong Bang  |      20      |
+| 2     |  Multi-player State, Single player state, Statistics state  | Minh Vu |      20      |
+| 3     | New map state, Win state calling, Finding assets    | Quang Dieu |      20      |
+| 4     | Animation class, Button class, Ship class, Sketch, Draw, Swap map| Anh Tu  |      20      |
+| 4     | Project Management, Bot class, Instruction state | Nhat Huy  |      20      |
 
 
 <br />
@@ -120,12 +128,9 @@ Motivation is what drives us to succeed in life, and when it comes to computer s
 	
 ## Acknowledgments<a name="Acknowledgments">:brain:
 <div style="text-align:justify">
-We would want to express our gratitude to Dr. Tran Thanh Tung for providing us with the chance to
-participate in this project and apply what we learned in theory into practice. This project's
-learning curve was steep, but it was well worth it for all of us. We have learned more about interface technologies to construct a functioning application
-that interacts with our project. Tom, we want to thank you again for all the hard work and expertise that you have
-put into your teaching. We'll make sure that all we've learned doesn't go to waste, and that
-we can master them better from now on :heart:
+
+We would want to express our gratitude to Dr. Tran Thanh Tung for providing us with the chance to participate in this project and apply what we learned in theory into practice. This project's learning curve was steep, but it was well worth it for all of us. We have learned more about interface technologies to construct a functioning application that interacts with our project. Sir, we want to thank you again for all the hard work and expertise that you have put into your teaching. We'll make sure that all we've learned doesn't go to waste, and that we can master them better from now on :heart:
+
 </div>
 
 <br />
@@ -146,11 +151,11 @@ we can master them better from now on :heart:
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Nhathuy1305/DSDV-project.svg?style=for-the-badge
-[contributors-url]: https://github.com/Nhathuy1305/DSDV-project/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Nhathuy1305/DSDV-project.svg?style=for-the-badge
-[forks-url]: https://github.com/Nhathuy1305/DSDV-project/network/members
-[stars-shield]: https://img.shields.io/github/stars/Nhathuy1305/DSDV-project.svg?style=for-the-badge
-[stars-url]: https://github.com/Nhathuy1305/DSDV-project/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Nhathuy1305/DSDV-project.svg?style=for-the-badge
-[issues-url]: https://github.com//Nhathuy1305/DSDV-project/issues
+[contributors-shield]: https://img.shields.io/github/contributors/congbangitiu/Battleship-Remastered.svg?style=for-the-badge
+[contributors-url]: https://github.com/congbangitiu/Battleship-Remastered/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/congbangitiu/Battleship-Remastered.svg?style=for-the-badge
+[forks-url]: https://github.com/congbangitiu/Battleship-Remastered/network/members
+[stars-shield]: https://img.shields.io/github/stars/congbangitiu/Battleship-Remastered.svg?style=for-the-badge
+[stars-url]: https://github.com/congbangitiu/Battleship-Remastered/stargazers
+[issues-shield]: https://img.shields.io/github/issues/congbangitiu/Battleship-Remastered.svg?style=for-the-badge
+[issues-url]: https://github.com//congbangitiu/Battleship-Remastered/issues
