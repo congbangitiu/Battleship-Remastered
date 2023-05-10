@@ -90,108 +90,108 @@ let drawGeneratedMap = function (randomMap) {
   }
 };
 
-// // Create new map state
-// let newMapState = function () {
-//   let backButton = new button("Back", 250, 450);
-//   let newMapButton = new button("New map", 450, 450);
-//   let startButton = new button("Start", 650, 450);
+// Create new map state
+let newMapState = function () {
+  let backButton = new button("Back", 250, 450);
+  let newMapButton = new button("New map", 450, 450);
+  let startButton = new button("Start", 650, 450);
 
-//   let meteorX = 600,
-//     meteorY = 385;
-//   let meteorCountButton = new button(
-//     "    " + countMeteor,
-//     meteorX,
-//     meteorY,
-//     120,
-//     40
-//   );
-//   let leftArrow = new button("<", meteorX + 5, meteorY + 5, 30, 30);
-//   let rightArrow = new button(">", meteorX + 120 - 35, meteorY + 5, 30, 30);
+  let meteorX = 600,
+    meteorY = 385;
+  let meteorCountButton = new button(
+    "    " + countMeteor,
+    meteorX,
+    meteorY,
+    120,
+    40
+  );
+  let leftArrow = new button("<", meteorX + 5, meteorY + 5, 30, 30);
+  let rightArrow = new button(">", meteorX + 120 - 35, meteorY + 5, 30, 30);
 
-//   fill(255, 255, 255);
-//   text("Meteor Area Blocks:", meteorX - 200, meteorY + 7, 200, 40);
+  fill(255, 255, 255);
+  text("Meteor Area Blocks:", meteorX - 200, meteorY + 7, 200, 40);
 
-//   backButton.draw();
-//   startButton.draw();
-//   newMapButton.draw();
-//   meteorCountButton.draw();
-//   leftArrow.draw();
-//   rightArrow.draw();
+  backButton.draw();
+  startButton.draw();
+  newMapButton.draw();
+  meteorCountButton.draw();
+  leftArrow.draw();
+  rightArrow.draw();
 
-//   drawGeneratedMap(randomMap);
+  drawGeneratedMap(randomMap);
 
-//   if (leftArrow.insideButton()) {
-//     if (!mouseIsPressed) {
-//       leftArrow.lightUpButton();
-//     } else {
-//       if (countMeteor > 0) {
-//         countMeteor--;
-//       }
-//       mouseIsPressed = false;
-//     }
-//   }
+  if (leftArrow.insideButton()) {
+    if (!mouseIsPressed) {
+      leftArrow.lightUpButton();
+    } else {
+      if (countMeteor > 0) {
+        countMeteor--;
+      }
+      mouseIsPressed = false;
+    }
+  }
 
-//   if (rightArrow.insideButton()) {
-//     if (!mouseIsPressed) {
-//       rightArrow.lightUpButton();
-//     } else {
-//       if (countMeteor < 25) {
-//         countMeteor++;
-//         mouseIsPressed = false;
-//       }
-//     }
-//   }
+  if (rightArrow.insideButton()) {
+    if (!mouseIsPressed) {
+      rightArrow.lightUpButton();
+    } else {
+      if (countMeteor < 25) {
+        countMeteor++;
+        mouseIsPressed = false;
+      }
+    }
+  }
 
-//   if (startButton.insideButton()) {
-//     //check to see if the mouse is pressed
-//     if (!mouseIsPressed) {
-//       //if mouse is not pressed then light up button
-//       startButton.lightUpButton();
-//     }
-//     if (mouseIsPressed) {
-//       //if mouse is pressed go to menu
-//       makeNewMap = false;
+  if (startButton.insideButton()) {
+    //check to see if the mouse is pressed
+    if (!mouseIsPressed) {
+      //if mouse is not pressed then light up button
+      startButton.lightUpButton();
+    }
+    if (mouseIsPressed) {
+      //if mouse is pressed go to menu
+      makeNewMap = false;
 
-//       if (singlePlayer === true) {
-//         createNewSinglePlayerObject();
-//       } else {
-//         createNewMultiplayerObject();
-//       }
-//       mouseIsPressed = false;
-//     }
-//   }
+      if (singlePlayer === true) {
+        createNewSinglePlayerObject();
+      } else {
+        createNewMultiplayerObject();
+      }
+      mouseIsPressed = false;
+    }
+  }
 
-//   if (newMapButton.insideButton()) {
-//     //check to see if the mouse is pressed
-//     if (!mouseIsPressed) {
-//       //if mouse is not pressed then light up button
-//       newMapButton.lightUpButton();
-//     }
-//     if (mouseIsPressed) {
-//       //if mouse is pressed go to menu
-//       for (let i = 0; i < 10; i++) {
-//         for (let j = 0; j < 10; j++) {
-//           randomMap[i][j] = 0;
-//         }
-//       }
-//       generateIslands(countMeteor);
-//       mouseIsPressed = false;
-//     }
-//   }
-//   // back button  - common for both the players
-//   if (backButton.insideButton()) {
-//     //check to see if the mouse is pressed
-//     if (!mouseIsPressed) {
-//       //if mouse is not pressed then light up button
-//       backButton.lightUpButton();
-//     }
-//     if (mouseIsPressed) {
-//       //if mouse is pressed go to menu
-//       makeNewMap = false;
-//       singlePlayer = false;
-//       multiPlayerOffline = false;
-//       menu = true;
-//       mouseIsPressed = false;
-//     }
-//   }
-// };
+  if (newMapButton.insideButton()) {
+    //check to see if the mouse is pressed
+    if (!mouseIsPressed) {
+      //if mouse is not pressed then light up button
+      newMapButton.lightUpButton();
+    }
+    if (mouseIsPressed) {
+      //if mouse is pressed go to menu
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+          randomMap[i][j] = 0;
+        }
+      }
+      generateIslands(countMeteor);
+      mouseIsPressed = false;
+    }
+  }
+  // back button  - common for both the players
+  if (backButton.insideButton()) {
+    //check to see if the mouse is pressed
+    if (!mouseIsPressed) {
+      //if mouse is not pressed then light up button
+      backButton.lightUpButton();
+    }
+    if (mouseIsPressed) {
+      //if mouse is pressed go to menu
+      makeNewMap = false;
+      singlePlayer = false;
+      multiPlayerOffline = false;
+      menu = true;
+      mouseIsPressed = false;
+    }
+  }
+};
