@@ -1,4 +1,5 @@
 let countMeteor = 0;
+
 // Generate meteors
 let generateMeteor = function (countMeteor) {
   let meteorStack = { xCoord: [], yCoord: [] };
@@ -9,20 +10,8 @@ let generateMeteor = function (countMeteor) {
 
   // Initialize meteors area
   while (countMeteor > 0) {
-    let nodeX;
-    let nodeY;
-
-    if (meteorStack.xCoord.length === 0 && countMeteor > 0) {
-      while (randomMap[nodeX][nodeY] === ISLAND) {
-        nodeX = floor(random(0, 10));
-        nodeY = floor(random(0, 10));
-      }
-      meteorStack.xCoord.push(nodeX);
-      meteorStack.yCoord.push(nodeY);
-    }
-
-    nodeX = meteorStack.xCoord.pop();
-    nodeY = meteorStack.yCoord.pop();
+    let nodeX = meteorStack.xCoord.pop();
+    let nodeY = meteorStack.yCoord.pop();
 
     while (
       meteorStack.xCoord.length !== 0 &&
@@ -90,23 +79,23 @@ let drawGeneratedMap = function (randomMap) {
   }
 };
 
-// Create new map state
 let newMapState = function () {
-  let backButton = new button("Back", 250, 450);
-  let newMapButton = new button("New map", 450, 450);
-  let startButton = new button("Start", 650, 450);
+  const backButton = new Button("Back", 250, 450);
+  const newMapButton = new Button("New Map", 450, 450);
+  const startButton = new Button("Start", 650, 450);
 
-  let meteorX = 600,
-    meteorY = 385;
-  let meteorCountButton = new button(
-    "    " + countMeteor,
+  let meteorCount = countMeteor;
+  const meteorX = 600;
+  const meteorY = 385;
+  const meteorCountButton = new Button(
+    `    ${meteorCount}`,
     meteorX,
     meteorY,
     120,
     40
   );
-  let leftArrow = new button("<", meteorX + 5, meteorY + 5, 30, 30);
-  let rightArrow = new button(">", meteorX + 120 - 35, meteorY + 5, 30, 30);
+  const leftArrow = new Button("<", meteorX + 5, meteorY + 5, 30, 30);
+  const rightArrow = new Button(">", meteorX + 120 - 35, meteorY + 5, 30, 30);
 
   fill(255, 255, 255);
   text("Meteor Area Blocks:", meteorX - 200, meteorY + 7, 200, 40);
@@ -120,78 +109,46 @@ let newMapState = function () {
 
   drawGeneratedMap(randomMap);
 
-  if (leftArrow.insideButton()) {
-    if (!mouseIsPressed) {
-      leftArrow.lightUpButton();
+  if (leftArrow.insideButton() && mouseIsPressed) {
+    if (meteorCount > 0) {
+      meteorCount--;
+    }
+  }
+
+  if (rightArrow.insideButton() && mouseIsPressed) {
+    if (meteorCount < 25) {
+      meteorCount++;
+    }
+  }
+
+  if (meteorCount !== countMeteor) {
+    countMeteor = meteorCount;
+    meteorCountButton.setText(`    ${countMeteor}`);
+  }
+
+  if (startButton.insideButton() && mouseIsPressed) {
+    makeNewMap = false;
+
+    if (singlePlayer) {
+      createNewSinglePlayerObject();
     } else {
-      if (countMeteor > 0) {
-        countMeteor--;
-      }
-      mouseIsPressed = false;
+      createNewMultiplayerObject();
     }
   }
 
-  if (rightArrow.insideButton()) {
-    if (!mouseIsPressed) {
-      rightArrow.lightUpButton();
-    } else {
-      if (countMeteor < 25) {
-        countMeteor++;
-        mouseIsPressed = false;
+  if (newMapButton.insideButton() && mouseIsPressed) {
+    for (let i = 0; i < 10; i++) {
+      for (let j = 0; j < 10; j++) {
+        randomMap[i][j] = 0;
       }
     }
+    generateIslands(countMeteor);
   }
 
-  if (startButton.insideButton()) {
-    //check to see if the mouse is pressed
-    if (!mouseIsPressed) {
-      //if mouse is not pressed then light up button
-      startButton.lightUpButton();
-    }
-    if (mouseIsPressed) {
-      //if mouse is pressed go to menu
-      makeNewMap = false;
-
-      if (singlePlayer === true) {
-        createNewSinglePlayerObject();
-      } else {
-        createNewMultiplayerObject();
-      }
-      mouseIsPressed = false;
-    }
-  }
-
-  if (newMapButton.insideButton()) {
-    //check to see if the mouse is pressed
-    if (!mouseIsPressed) {
-      //if mouse is not pressed then light up button
-      newMapButton.lightUpButton();
-    }
-    if (mouseIsPressed) {
-      //if mouse is pressed go to menu
-      for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < 10; j++) {
-          randomMap[i][j] = 0;
-        }
-      }
-      generateIslands(countMeteor);
-      mouseIsPressed = false;
-    }
-  }
-  // back button  - common for both the players
-  if (backButton.insideButton()) {
-    //check to see if the mouse is pressed
-    if (!mouseIsPressed) {
-      //if mouse is not pressed then light up button
-      backButton.lightUpButton();
-    }
-    if (mouseIsPressed) {
-      //if mouse is pressed go to menu
-      makeNewMap = false;
-      singlePlayer = false;
-      multiPlayerOffline = false;
-      menu = true;
-      mouseIsPressed = false;
-    }
+  if (backButton.insideButton() && mouseIsPressed) {
+    makeNewMap = false;
+    singlePlayer = false;
+    multiPlayerOffline = false;
+    menu = true;
   }
 };
