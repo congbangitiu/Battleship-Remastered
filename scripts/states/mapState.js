@@ -72,23 +72,23 @@ let generateMeteor = function (countMeteor) {
   }
 };
 
-// // Draw map with meteor for playing
-// let drawGeneratedMap = function (randomMap) {
-//   let indent = 340;
+// Draw map with meteor for playing
+let drawGeneratedMap = function (randomMap) {
+  let indent = 340;
 
-//   for (let i = 0; i < 10; i++) {
-//     for (let j = 0; j < 10; j++) {
-//       fill(64, 54, 255);
+  for (let i = 0; i < 10; i++) {
+    for (let j = 0; j < 10; j++) {
+      fill(64, 54, 255);
 
-//       if (randomMap[i][j] !== ISLAND) {
-//         rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
-//       } else {
-//         fill(255, 212, 128);
-//         rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
-//       }
-//     }
-//   }
-// };
+      if (randomMap[i][j] !== ISLAND) {
+        rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+      } else {
+        fill(255, 212, 128);
+        rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+      }
+    }
+  }
+};
 
 // // Create new map state
 // let newMapState = function () {
