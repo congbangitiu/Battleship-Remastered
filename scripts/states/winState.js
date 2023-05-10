@@ -5,7 +5,7 @@ const statisticsEnum = {
     Player2: 1,
     bot: 2,
   },
-  col: {
+  metric: {
     matchesWon: 0,
     matchesLost: 1,
     shipsDestroyed: 2,
@@ -22,7 +22,6 @@ function roundTo(num) {
 
 // Initialize state call
 let winStateCall = function () {
-  // background(0, 0, 0);
   fill(240, 218, 240);
 
   // display victory message too
