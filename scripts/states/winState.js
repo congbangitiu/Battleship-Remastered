@@ -273,70 +273,70 @@ let winStateCall = function () {
       statTableUpdated = true;
     }
     player1.drawGridActual();
-//   } else {
-//     textSize(40);
-//     text("BOT Wins --- bot win !!! turns:-" + bot.turn, 400, 400, 400, 400);
+  } else {
+    textSize(40);
+    text("BOT VICTORY --- bot win !!! turns:-" + bot.turn, 400, 400, 400, 400);
 
-//     if (statTableUpdated === false) {
-//       statTable[statisticsEnum.row.botPlayer][statisticsEnum.col.matchesWon]++;
-//       statTable[statisticsEnum.row.Player1][statisticsEnum.col.matchesLost]++;
+    if (statTableUpdated === false) {
+      statTable[statisticsEnum.row.botPlayer][statisticsEnum.col.matchesWon]++;
+      statTable[statisticsEnum.row.Player1][statisticsEnum.col.matchesLost]++;
 
-//       // average turns to win
-//       statTable[statisticsEnum.row.botPlayer][
-//         statisticsEnum.col.avgTurnsToWin
-//       ] += bot.turn;
-//       statTable[statisticsEnum.row.botPlayer][
-//         statisticsEnum.col.avgTurnsToWin
-//       ] = roundTo(
-//         statTable[statisticsEnum.row.botPlayer][
-//           statisticsEnum.col.avgTurnsToWin
-//         ] /
-//           statTable[statisticsEnum.row.botPlayer][statisticsEnum.col.matchesWon]
-//       );
+      // average turns to win
+      statTable[statisticsEnum.row.botPlayer][
+        statisticsEnum.col.avgTurnsToWin
+      ] += bot.turn;
+      statTable[statisticsEnum.row.botPlayer][
+        statisticsEnum.col.avgTurnsToWin
+      ] = roundTo(
+        statTable[statisticsEnum.row.botPlayer][
+          statisticsEnum.col.avgTurnsToWin
+        ] /
+          statTable[statisticsEnum.row.botPlayer][statisticsEnum.col.matchesWon]
+      );
 
-//       // win percentage
-//       statTable[statisticsEnum.row.botPlayer][
-//         statisticsEnum.col.winPercentage
-//       ] = roundTo(
-//         (statTable[statisticsEnum.row.botPlayer][
-//           statisticsEnum.col.matchesWon
-//         ] /
-//           (statTable[statisticsEnum.row.botPlayer][
-//             statisticsEnum.col.matchesWon
-//           ] +
-//             statTable[statisticsEnum.row.botPlayer][
-//               statisticsEnum.col.matchesLost
-//             ])) *
-//           100
-//       );
-//       statTable[statisticsEnum.row.Player1][statisticsEnum.col.winPercentage] =
-//         roundTo(
-//           (statTable[statisticsEnum.row.Player1][
-//             statisticsEnum.col.matchesWon
-//           ] /
-//             (statTable[statisticsEnum.row.Player1][
-//               statisticsEnum.col.matchesWon
-//             ] +
-//               statTable[statisticsEnum.row.Player1][
-//                 statisticsEnum.col.matchesLost
-//               ])) *
-//             100
-//         );
-//       // number of ships destroyed
-//       let numberOfShipsDestroyed = 0;
-//       for (let i = 0; i < 5; i++) {
-//         if (player1.currLife[i] === 0) {
-//           numberOfShipsDestroyed++;
-//         }
-//       }
+      // win percentage
+      statTable[statisticsEnum.row.botPlayer][
+        statisticsEnum.col.winPercentage
+      ] = roundTo(
+        (statTable[statisticsEnum.row.botPlayer][
+          statisticsEnum.col.matchesWon
+        ] /
+          (statTable[statisticsEnum.row.botPlayer][
+            statisticsEnum.col.matchesWon
+          ] +
+            statTable[statisticsEnum.row.botPlayer][
+              statisticsEnum.col.matchesLost
+            ])) *
+          100
+      );
+      statTable[statisticsEnum.row.Player1][statisticsEnum.col.winPercentage] =
+        roundTo(
+          (statTable[statisticsEnum.row.Player1][
+            statisticsEnum.col.matchesWon
+          ] /
+            (statTable[statisticsEnum.row.Player1][
+              statisticsEnum.col.matchesWon
+            ] +
+              statTable[statisticsEnum.row.Player1][
+                statisticsEnum.col.matchesLost
+              ])) *
+            100
+        );
+      // number of ships destroyed
+      let numberOfShipsDestroyed = 0;
+      for (let i = 0; i < 5; i++) {
+        if (player1.currLife[i] === 0) {
+          numberOfShipsDestroyed++;
+        }
+      }
 
-//       statTable[statisticsEnum.row.botPlayer][
-//         statisticsEnum.col.shipsDestroyed
-//       ] += bot.countShipStatus("lost");
-//       statTable[statisticsEnum.row.Player1][statisticsEnum.col.shipsLost] +=
-//         bot.countShipStatus("lost");
+      statTable[statisticsEnum.row.botPlayer][
+        statisticsEnum.col.shipsDestroyed
+      ] += bot.countShipStatus("lost");
+      statTable[statisticsEnum.row.Player1][statisticsEnum.col.shipsLost] +=
+        bot.countShipStatus("lost");
 //       // number of ships lost
-//       islandsCountlet;
+//       countMeteor;
 //       statTable[statisticsEnum.row.botPlayer][statisticsEnum.col.shipsLost] +=
 //         numberOfShipsDestroyed;
 //       statTable[statisticsEnum.row.Player1][
