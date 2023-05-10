@@ -335,40 +335,40 @@ let winStateCall = function () {
       ] += bot.countShipStatus("lost");
       statTable[statisticsEnum.row.Player1][statisticsEnum.col.shipsLost] +=
         bot.countShipStatus("lost");
-//       // number of ships lost
-//       countMeteor;
-//       statTable[statisticsEnum.row.botPlayer][statisticsEnum.col.shipsLost] +=
-//         numberOfShipsDestroyed;
-//       statTable[statisticsEnum.row.Player1][
-//         statisticsEnum.col.shipsDestroyed
-//       ] += numberOfShipsDestroyed;
+      // number of ships lost
+      countMeteor;
+      statTable[statisticsEnum.row.botPlayer][statisticsEnum.col.shipsLost] +=
+        numberOfShipsDestroyed;
+      statTable[statisticsEnum.row.Player1][
+        statisticsEnum.col.shipsDestroyed
+      ] += numberOfShipsDestroyed;
 
-//       statTableUpdated = true;
-//     }
+      statTableUpdated = true;
+    }
 
-//     player1.drawGridActual();
-//   }
+    player1.drawGridActual();
+  }
 
-//   let backButton = new button("Menu", 150, 450);
-//   backButton.draw();
+  let backButton = new button("Menu", 150, 450);
+  backButton.draw();
 
-//   if (backButton.insideButton()) {
-//     //check to see if the mouse is pressed
-//     if (!mouseIsPressed) {
-//       backButton.lightUpButton();
-//     }
-//     if (mouseIsPressed) {
-//       //if mouse is pressed go to menu
-//       winState = false;
-//       menu = true;
-//       statTableUpdated = false;
+  if (backButton.insideButton()) {
+    //check to see if the mouse is pressed
+    if (!mouseIsPressed) {
+      backButton.lightUpButton();
+    }
+    if (mouseIsPressed) {
+      //if mouse is pressed go to menu
+      winState = false;
+      menu = true;
+      statTableUpdated = false;
 
-//       singlePlayerWin = false;
-//       player1.initializeGrid();
-//       player2.initializeGrid();
-//       bot.initializeGrid();
-//       createNewMultiplayerObject();
-//       createNewSinglePlayerObject();
-//     }
-//   }
-// };
+      singlePlayerWin = false;
+      player1.initializeGrid();
+      player2.initializeGrid();
+      bot.initializeGrid();
+      createNewMultiplayerObject();
+      createNewSinglePlayerObject();
+    }
+  }
+};
