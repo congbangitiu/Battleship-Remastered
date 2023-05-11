@@ -9,16 +9,7 @@ class animation {
         this.fishX2 = -500;
         this.fishY = 0;
     }
-    
-    drawPebbles(x, y) {
-        for (let i = 0; i < 450; i++) {
-            let randomX = x + random(0, 1300);
-            let randomY = y + random(670, 750);
-            fill(random(0, 300), random(0, 200), random(0, 100));
-            ellipse(randomX, randomY, 15, 10);
-        }
-    }
-    
+
     drawShip(centerX, centerY, r, g, b) {
         let bodyLength = 72;
         let bodyHeight = 43;
@@ -58,13 +49,13 @@ class animation {
         ellipse(submarine_X + 190, submarine_Y + 37, 35, 35);
     }
     
-    drawFishGroup(x, y) {
-        this.drawFish(x + 100, y + 100, 100, 167, 100);
-        this.drawFish(x + 303, y + 100, 322, 144, 253);
-        this.drawFish(x + 164, y + 229, 292, 243, 112);
-        this.drawFish(x + 264, y + 303, 155, 118, 253);
-        this.drawFish(x + 331, y + 197, 155, 243, 146);
-        this.drawFish(x + 65, y + 294, 310, 20, 290);
+    drawShipGroup(x, y) {
+        this.drawShip(x + 100, y + 100, 100, 167, 100);
+        this.drawShip(x + 303, y + 100, 322, 144, 253);
+        this.drawShip(x + 164, y + 229, 292, 243, 112);
+        this.drawShip(x + 264, y + 303, 155, 118, 253);
+        this.drawShip(x + 331, y + 197, 155, 243, 146);
+        this.drawShip(x + 65, y + 294, 310, 20, 290);
     }
     
     drawSubmarine(submarine_X, submarine_Y) {
@@ -103,8 +94,8 @@ class animation {
         this.fishX1 = this.fishX1 + 2.5;
         this.fishX2 = this.fishX2 + 2.5;
 
-        this.drawFishGroup(this.fishX1, this.fishY);
-        this.drawFishGroup(this.fishX2, this.fishY);
+        this.drawShipGroup(this.fishX1, this.fishY);
+        this.drawShipGroup(this.fishX2, this.fishY);
 
         if (this.submarineX1 < -100) {
             this.submarineX1 = 1300;
