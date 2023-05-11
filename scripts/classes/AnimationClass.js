@@ -11,17 +11,17 @@ class animation {
     }
     
     drawPebbles(x, y) {
-        for (var i = 0; i < 450; i++) {
-            var randomX = x + random(0, 1300);
-            var randomY = y + random(670, 750);
+        for (let i = 0; i < 450; i++) {
+            let randomX = x + random(0, 1300);
+            let randomY = y + random(670, 750);
             fill(random(0, 300), random(0, 200), random(0, 100));
             ellipse(randomX, randomY, 15, 10);
         }
     }
     
     drawShip(centerX, centerY, r, g, b) {
-        var bodyLength = 72;
-        var bodyHeight = 43;
+        let bodyLength = 72;
+        let bodyHeight = 43;
 
         // color
         fill(r, g, b);
@@ -34,8 +34,8 @@ class animation {
         
         // head
         fill(g, b, r);     
-        var tailWidth = bodyLength / 2;
-        var tailHeight = bodyHeight / 2;
+        let tailWidth = bodyLength / 2;
+        let tailHeight = bodyHeight / 2;
         triangle(centerX + bodyLength * 1.5, centerY + bodyHeight/2,
                 centerX + bodyLength / 2 + tailWidth, centerY + tailHeight + bodyHeight/2,
                 centerX + bodyLength / 2 + tailWidth, centerY - tailHeight + bodyHeight/2);

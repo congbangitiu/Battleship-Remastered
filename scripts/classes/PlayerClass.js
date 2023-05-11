@@ -1,4 +1,4 @@
-const playerClass = (playerName, playerRole) => {
+var playerClass = (playerName, playerRole) => {
     // Inherits objects from Network Class
     networkClass.call(this);
 
@@ -56,8 +56,8 @@ const playerClass = (playerName, playerRole) => {
     ];
 };
 
-// Inherit methods from PlayerClass to playerClass.
-// playerClass.prototype = Object.create(PlayClass.prototype);
+// Inherit methods from PlayerClass to playerClass
+// Used in a graphical user interface to display the current state of a game board or grid
 playerClass.prototype.drawGridActual = () => {
     var i = 1, j = 1, indent = 0;
 
@@ -97,6 +97,7 @@ playerClass.prototype.drawGridActual = () => {
     }
 };
 
+// Used in a graphical user interface to display the current state of a game board or grid
 playerClass.prototype.drawGridHidden = () => {
     let i = 1, j = 1, indent = 0;
 
@@ -157,6 +158,7 @@ playerClass.prototype.drawGridHidden = () => {
     return 0;
 };
 
+// Used to place a ship on a game board or grid
 playerClass.prototype.arrangeShip = () => {
     // solve random function ceiling
     var size;
@@ -232,6 +234,7 @@ playerClass.prototype.arrangeShip = () => {
     }
 };
 
+// Used to set up the initial state of a game board or grid
 playerClass.prototype.initializeGrid = () => {
     for(var i = 0; i < 10; i++){
         for(var j = 0; j < 10; j++){
@@ -278,6 +281,7 @@ playerClass.prototype.initializeGrid = () => {
     this.startOnlineGame = false;
 };
 
+// Used to determine whether a ship on the game board or grid has been hit and sunk, or whether it is still floating
 playerClass.prototype.checkShipLifeStatus = () => {
     if ((this.currLife[0] + this.currLife[1] + this.currLife[2] + this.currLife[3] + this.currLife[4]) === 0) {
         return true;
@@ -285,6 +289,7 @@ playerClass.prototype.checkShipLifeStatus = () => {
     return false;
 };
 
+//Used to implement the main game loop for a turn-based game
 playerClass.prototype.play = (playerRole) => {
     var indent = 0, i = 1, j = 1;
     // if all opponents ships have sunk declare victory
@@ -356,15 +361,14 @@ playerClass.prototype.play = (playerRole) => {
     return 0;
 };
 
+// Used in a networked multiplayer game to receive information about the opponent's ship deployments from the game server
 playerClass.prototype.deployShipsReceivedFromServer = () => {
     var i = 0, j = 0;
 
     for (i = 0; i < 5; i++) {
         // ship is arranged horizontally
         if (this.ship[i].beign.x === this.ship[i].end.x) {
-
             for (j = 0; j < this.shipType[i].size; j++) {
-
                 this.gridActual[this.ship[i].begin.x][this.ship[i].begin.y + j] = 1;
             }
         }
@@ -372,7 +376,6 @@ playerClass.prototype.deployShipsReceivedFromServer = () => {
         //ship is arranged vertically
         else {
             for (j = 0; j < this.shipType[i].size; j++) {
-
                 this.gridActual[this.ship[i].begin.x + j][this.ship[i].begin.y] = 1;
             }
         }

@@ -1,4 +1,4 @@
-const botClass = () => {
+let botClass = () => {
     // Create constructor Bot Class
     playerClass.call(this, "p2", 2);
 
@@ -14,13 +14,13 @@ const botClass = () => {
     this.missed_target_y = [];
     this.stack_x = [];
     this.stack_y = [];
-}
+};
 
 // Inherit all methods from Player Class
 botClass.prototype = Object.create(playerClass.prototype);
 
 botClass.prototype.countShipStatus = (str) => {
-    var numberOfShipsDestroyed = 0;
+    let numberOfShipsDestroyed = 0;
     for (let i = 0; i < 5; i++)
         if(bot.currLife[i] === 0)
             numberOfShipsDestroyed++;
@@ -29,7 +29,7 @@ botClass.prototype.countShipStatus = (str) => {
 }
 
 botClass.prototype.drawProbabilityDensityGrid = () => {
-    let i = 1, j = 1;
+    let i, j = 1;
     const indent = 200;
 
     for (i = 0; i < 10; i++) {
@@ -102,7 +102,7 @@ botClass.prototype.gridFilter = (i, j, horiz, currShip) => {
 }
 
 botClass.prototype.largestAliveShip = () => {
-    let i = 0;
+    let i;
 
     // Find the current biggest alive ship of component
     for (i = 4; i >= 0; i--) {
@@ -180,7 +180,7 @@ botClass.prototype.initialize = () => {
 }
 
 botClass.prototype.calcProbabilityDensity = () => {
-    var i, j, k;
+    let i, j, k;
 
     this.initialize();
 
@@ -241,7 +241,7 @@ botClass.prototype.calcProbabilityDensity = () => {
 }
 
 botClass.prototype.maxProbability = () => {
-    var i, j, max = 0;
+    let i, j, max = 0;
 
     for (i = 0; i < 10; i++) {
         for (j = 0; j < 10; j++) {
