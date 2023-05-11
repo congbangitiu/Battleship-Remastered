@@ -9,6 +9,7 @@ class animation {
         this.fishX2 = -500;
         this.fishY = 0;
     }
+
     drawShip(centerX, centerY, r, g, b) {
         let bodyLength = 72;
         let bodyHeight = 43;

@@ -11,7 +11,7 @@ const instructionState = () => {
     // Create button
 
     /* This part has not done */
-    let backButton = new button("back", 255, 500);
+    let backButton = new buttonClas("back", 225, 500);
     backButton.draw();
 
     // If the mouse is in the same place as the button
