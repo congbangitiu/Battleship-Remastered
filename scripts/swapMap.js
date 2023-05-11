@@ -1,13 +1,13 @@
 // Create new instances of player1, player2
-let player1 = new playerClass("player-1", 1);
-let player2 = new playerClass("player-2", 2);
-let bot = new botClass();
+var player1 = new playerClass("player-1", 1);
+var player2 = new playerClass("player-2", 2);
+var bot = new botClass();
 
 /**
  * Re-initialize instances of Multiplayer object
  */
 
-let createNewMultiPlayerObject = () => {
+var createNewMultiPlayerObject = function() {
     player1 = new playerClass("player-1", 1);
     player1.initializeGrid();
 
@@ -19,7 +19,7 @@ let createNewMultiPlayerObject = () => {
  * Re-initialize instances of single player object
  */
 
-let createNewSinglePlayerObject = () => {
+var createNewSinglePlayerObject = function() {
     player1 = new playerClass("player-1", 1);
     player1.initializeGrid();
 
@@ -36,7 +36,7 @@ let createNewSinglePlayerObject = () => {
  * @Param {String} gameType  gameType = "singlePlayer" or "multiPlayer"
  */
 
-let swapMap = (gameType) => {
+var swapMap = function(gameType) {
     let temp = new Array(10);
     for (let i = 0; i < 10; i++) {
         temp[i] = new Array(10);

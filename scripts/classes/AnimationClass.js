@@ -11,8 +11,8 @@ class animation {
     }
 
     drawShip(centerX, centerY, r, g, b) {
-        let bodyLength = 72;
-        let bodyHeight = 43;
+        var bodyLength = 72;
+        var bodyHeight = 43;
 
         // color
         fill(r, g, b);
@@ -25,8 +25,8 @@ class animation {
         
         // head
         fill(g, b, r);     
-        let tailWidth = bodyLength / 2;
-        let tailHeight = bodyHeight / 2;
+        var tailWidth = bodyLength / 2;
+        var tailHeight = bodyHeight / 2;
         triangle(centerX + bodyLength * 1.5, centerY + bodyHeight/2,
                 centerX + bodyLength / 2 + tailWidth, centerY + tailHeight + bodyHeight/2,
                 centerX + bodyLength / 2 + tailWidth, centerY - tailHeight + bodyHeight/2);

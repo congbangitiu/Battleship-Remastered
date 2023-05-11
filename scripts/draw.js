@@ -1,24 +1,22 @@
-let player1AutoButton = new buttonClass("auto", 50, 400);
-let player2AutoButton = new buttonClass("auto", 550, 400);
-let player1ConfirmButton = new buttonClass("confirm", 250, 400);
-let player2ConfirmButton = new buttonClass("confirm", 750, 400);
+var player1AutoButton = new button("auto", 50, 400);
+var player2AutoButton = new button("auto", 550, 400);
+var player1ConfirmButton = new button("confirm", 250, 400);
+var player2ConfirmButton = new button("confirm", 750, 400);
 
-let posX = 400, posY = 70;
-let singlePlayerButton = new buttonClass("single-player", posX + 100, posY + 40);
-let multiPlayerButton = new buttonClass("multi-player", posX + 100, posY + 90);
-let onlineButton = new buttonClass("online", posX + 100, posY + 140);
-let instructionButton = new buttonClass("instructions", posX + 100, posY + 190);
-let creditButton = new buttonClass("credits", posX + 100, posY + 240);
-let statisticsButton = new buttonClass("statistics", posX + 100, posY + 290);
+var posX = 400, posY = 70;
+var singlePlayerButton = new button("single-player", posX + 100, posY + 40);
+var multiPlayerButton = new button("multi-player", posX + 100, posY + 90);
+var instructionButton = new button("Instructions", posX + 100, posY + 190);
+var statisticsButton = new button("statistics", posX + 100, posY + 290);
 
-let animate = new animation();
+var animate = new animation();
 
 /**
  * Function is executed 60 frames per second.
  * It invokes different gameStates based on values
  */
 
-let draw = () => {
+var draw = function() {
     animate.animationPlay();
 
     if (densityLens) {
@@ -32,9 +30,6 @@ let draw = () => {
     }
     else if (singlePlayer === true) {
         singlePlayerState();
-    }
-    else if (multiPlayerOnline === true) {
-        multiPlayerOnlineState();
     }
     else if (instructions === true) {
         instructionState();

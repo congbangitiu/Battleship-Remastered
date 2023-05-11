@@ -1,24 +1,29 @@
-let countMeteor = 0;
+var generateIslands = function (islandsCount) {
+  var stack = {first: [], second: []};
 
-// Generate meteors
-let generateMeteor = function (countMeteor) {
-  let meteorStack = { xCoord: [], yCoord: [] };
+  stack.first.push(floor(random(0, 10)));
+  stack.second.push(floor(random(0, 10)));
 
-  // Size of island from 0 -> 10
-  meteorStack.xCoord.push(floor(random(0, 10)));
-  meteorStack.yCoord.push(floor(random(0, 10)));
+  while (islandsCount > 0) {
+    var nodeX;
+    var nodeY;
 
-  // Initialize meteors area
-  while (countMeteor > 0) {
-    let nodeX = meteorStack.xCoord.pop();
-    let nodeY = meteorStack.yCoord.pop();
+    if (stack.first.length === 0 && islandsCount > 0) {
+      while (randomMap[nodeX][nodeY] === ISLAND) {
+        nodeX = floor(random(0, 10));
+        nodeY = floor(random(0, 10));
+      }
+      stack.first.push(nodeX);
+      stack.second.push(nodeY);
+    }
 
-    while (
-      meteorStack.xCoord.length !== 0 &&
-      randomMap[nodeX][nodeY] === ISLAND
-    ) {
-      nodeX = meteorStack.xCoord.pop();
-      nodeY = meteorStack.yCoord.pop();
+    nodeX = stack.first.pop();
+    nodeY = stack.second.pop();
+
+    while (stack.first.length !== 0 && randomMap[nodeX][nodeY] === ISLAND) {
+      nodeX = stack.first.pop();
+      nodeY = stack.second.pop();
+
     }
 
     if (randomMap[nodeX][nodeY] === ISLAND) {
@@ -26,49 +31,47 @@ let generateMeteor = function (countMeteor) {
     }
 
     randomMap[nodeX][nodeY] = ISLAND;
-    countMeteor--;
 
-    let meteorArray = [[], []];
+    islandsCount--;
+
+    var ar = [[], []];
 
     if (nodeX + 1 < 10 && randomMap[nodeX + 1][nodeY] !== ISLAND) {
-      meteorArray[0].push(nodeX + 1);
-      meteorArray[1].push(nodeY);
+      ar[0].push(nodeX + 1);
+      ar[1].push(nodeY);
     }
     if (nodeY + 1 < 10 && randomMap[nodeX][nodeY + 1] !== ISLAND) {
-      meteorArray[0].push(nodeX);
-      meteorArray[1].push(nodeY + 1);
+      ar[0].push(nodeX);
+      ar[1].push(nodeY + 1);
     }
     if (nodeX - 1 >= 0 && randomMap[nodeX - 1][nodeY] !== ISLAND) {
-      meteorArray[0].push(nodeX - 1);
-      meteorArray[1].push(nodeY);
+      ar[0].push(nodeX - 1);
+      ar[1].push(nodeY);
     }
     if (nodeY - 1 >= 0 && randomMap[nodeX][nodeY - 1] !== ISLAND) {
-      meteorArray[0].push(nodeX);
-      meteorArray[1].push(nodeY - 1);
+      ar[0].push(nodeX);
+      ar[1].push(nodeY - 1);
     }
 
-    let randNumber = floor(random(0, meteorArray[0].length));
+    const randNumber = floor(random(0, ar[0].length));
 
-    if (meteorArray[0].length === 0) {
+    if (ar[0].length === 0) {
       continue;
     }
 
-    meteorStack.xCoord.push(meteorArray[0][randNumber]);
-    meteorStack.yCoord.push(meteorArray[1][randNumber]);
+    stack.first.push(ar[0][randNumber]);
+    stack.second.push(ar[1][randNumber]);
 
-    meteorArray[0].splice(randNumber, 1);
-    meteorArray[1].splice(randNumber, 1);
+    ar[0].splice(randNumber, 1);
+    ar[1].splice(randNumber, 1);
   }
 };
 
-// Draw map with meteor for playing
-let drawGeneratedMap = function (randomMap) {
-  let indent = 340;
-
+var drawGeneratedMap = function (randomMap) {
+  var indent = 340;
   for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
       fill(64, 54, 255);
-
       if (randomMap[i][j] !== ISLAND) {
         rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
       } else {
@@ -79,76 +82,107 @@ let drawGeneratedMap = function (randomMap) {
   }
 };
 
-let newMapState = function () {
-  const backButton = new Button("Back", 250, 450);
-  const newMapButton = new Button("New Map", 450, 450);
-  const startButton = new Button("Start", 650, 450);
+var islandsCount = 0;
 
-  let meteorCount = countMeteor;
-  const meteorX = 600;
-  const meteorY = 385;
-  const meteorCountButton = new Button(
-    `    ${meteorCount}`,
-    meteorX,
-    meteorY,
-    120,
-    40
-  );
-  const leftArrow = new Button("<", meteorX + 5, meteorY + 5, 30, 30);
-  const rightArrow = new Button(">", meteorX + 120 - 35, meteorY + 5, 30, 30);
+var newMapState = function () {
+
+  var backButton = new button("back", 250, 450);
+  var newMapButton = new button("new map", 450, 450);
+  var startButton = new button("start", 650, 450);
+
+  var islandX = 600, islandY = 385;
+  var islandsCountButton = new button("    " + islandsCount, islandX, islandY, 120, 40);
+  var leftArrow = new button("<", islandX + 5, islandY + 5, 30, 30);
+  var rightArrow = new button(">", islandX + 120 - 35, islandY + 5, 30, 30);
 
   fill(255, 255, 255);
-  text("Meteor Area Blocks:", meteorX - 200, meteorY + 7, 200, 40);
+  text("Island Blocks:", islandX - 200, islandY + 7, 200, 40);
 
   backButton.draw();
   startButton.draw();
   newMapButton.draw();
-  meteorCountButton.draw();
+  islandsCountButton.draw();
   leftArrow.draw();
   rightArrow.draw();
 
   drawGeneratedMap(randomMap);
 
-  if (leftArrow.insideButton() && mouseIsPressed) {
-    if (meteorCount > 0) {
-      meteorCount--;
-    }
-  }
+  if (leftArrow.insideButton()) {
 
-  if (rightArrow.insideButton() && mouseIsPressed) {
-    if (meteorCount < 25) {
-      meteorCount++;
-    }
-  }
+    if (!mouseIsPressed) {
 
-  if (meteorCount !== countMeteor) {
-    countMeteor = meteorCount;
-    meteorCountButton.setText(`    ${countMeteor}`);
-  }
-
-  if (startButton.insideButton() && mouseIsPressed) {
-    makeNewMap = false;
-
-    if (singlePlayer) {
-      createNewSinglePlayerObject();
+      leftArrow.lightUpButton();
     } else {
-      createNewMultiplayerObject();
+      if (islandsCount > 0) {
+        islandsCount--;
+      }
+      mouseIsPressed = false;
     }
   }
 
-  if (newMapButton.insideButton() && mouseIsPressed) {
-    for (let i = 0; i < 10; i++) {
-      for (let j = 0; j < 10; j++) {
-        randomMap[i][j] = 0;
+  if (rightArrow.insideButton()) {
+
+    if (!mouseIsPressed) {
+
+      rightArrow.lightUpButton();
+    } else {
+      if (islandsCount < 25) {
+        islandsCount++;
+        mouseIsPressed = false;
       }
     }
-    generateIslands(countMeteor);
   }
 
-  if (backButton.insideButton() && mouseIsPressed) {
-    makeNewMap = false;
-    singlePlayer = false;
-    multiPlayerOffline = false;
-    menu = true;
+  if (startButton.insideButton()) {
+    //check to see if the mouse is pressed
+    if (!mouseIsPressed) {
+      //if mouse is not pressed then light up button
+      startButton.lightUpButton();
+    }
+    if (mouseIsPressed) {
+      //if mouse is pressed go to menu
+      makeNewMap = false;
+
+      if (singlePlayer === true) {
+        createNewSinglePlayerObject();
+      } else {
+        createNewMultiPlayerObject();
+      }
+      mouseIsPressed = false;
+    }
+  }
+
+  if (newMapButton.insideButton()) {
+    //check to see if the mouse is pressed
+    if (!mouseIsPressed) {
+      //if mouse is not pressed then light up button
+      newMapButton.lightUpButton();
+    }
+    if (mouseIsPressed) {
+      //if mouse is pressed go to menu
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+          randomMap[i][j] = 0;
+        }
+      }
+      generateIslands(islandsCount);
+      mouseIsPressed = false;
+    }
+  }
+  // back button  - common for both the players
+  if (backButton.insideButton()) {
+    //check to see if the mouse is pressed
+    if (!mouseIsPressed) {
+      //if mouse is not pressed then light up button
+      backButton.lightUpButton();
+    }
+    if (mouseIsPressed) {
+      //if mouse is pressed go to menu
+      makeNewMap = false;
+      singlePlayer = false;
+      multiPlayerOffline = false;
+      menu = true;
+      mouseIsPressed = false;
+    }
   }
 };

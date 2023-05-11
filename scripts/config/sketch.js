@@ -1,48 +1,44 @@
-let setup = () => {
+function setup() {
     createCanvas(1300, 550);
     frameRate(50);
 }
 
-let mouseIsPressed = false;
+var mouseIsPressed = false;
 
-let mouseReleased = () => {
+var mouseReleased = function() {
     mouseIsPressed = false;
 };
 
-let mousePressed = () => {
+var mousePressed = function() {
     mouseIsPressed = true;
 };
 
-let touchStated = () => {
+var touchStarted = function() {
     mouseIsPressed = true;
 };
-
 
 //Global variables
  
-let menu = true;
-let credits = false;
-let instructions = false;
-let multiPlayerOffline = false;
-let multiPlayerOnline = false;
-let statistics = false;
-let winState = false;
-let makeNewMap = false;
+var menu = true;
+var instructions = false;
+var multiPlayerOffline = false;
+var statistics = false;
+var winState = false;
+var makeNewMap = false;
 
-let playerOneTurn = true;
-let singlePlayer = false;
-let singlePlayerWin = false;
-let multiPlayerWin = false;
-let densityLens = false;
-let statTableUpdated = false;
-let playerSwitching = true;
-let playerSwitchingIterator = 0;
+var playerOneTurn = true;
+var singlePlayer = false;
+var singlePlayerWin = false;
+var densityLens = false;
+var statTableUpdated = false;
+var playerSwitching = true;
+var playerSwitchingIterator = 0;
 
-let randomMap = new Array(10);
-for (let i = 0; i < randomMap; i++)
+var randomMap = new Array(10);
+for (let i = 0; i < randomMap.length; i++)
     randomMap[i] = new Array(10);
 
-let initializeRandomMap = () => {
+var initializeRandomMap = function()  {
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
             randomMap[i][j] = 0;
@@ -61,7 +57,7 @@ for (let i = 0; i < 10; i++) {
 const ISLAND = -2;
 
 // Creating statistics table
-let statTable = new Array(3);
+var statTable = new Array(3);
 for (let i = 0; i < statTable.length; i++) {
     statTable[i] = new Array(6);
 }

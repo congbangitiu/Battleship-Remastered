@@ -5,8 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08915cc3-66d0-4bb3-94d2-f7397ba1d6b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Project-DSA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project-DSA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/p5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/AnimationClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/AnimationClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/BotClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/BotClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/ButtonClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/NetworkClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/NetworkClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/PlayerClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/PlayerClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/ShipClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/ShipClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/config/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/config/sketch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/draw.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/draw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/MultiPlayerOfflineState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/MultiPlayerOfflineState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/SinglePlayerState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/SinglePlayerState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/StatisticsState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/StatisticsState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/instructionState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/instructionState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/mapState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/mapState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/menuState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/menuState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/winState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/winState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/swapMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/swapMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +60,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/huyng/OneDrive - VietNam National University - HCM INTERNATIONAL UNIVERSITY/Documents/GitHub/Band_Web_Responsive",
     "node.js.detected.package.eslint": "true",
@@ -55,6 +73,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\huyng\OneDrive - VietNam National University - HCM INTERNATIONAL UNIVERSITY\Documents\GitHub\Project-DSA\libs" />
       <recent name="C:\Users\huyng\OneDrive - VietNam National University - HCM INTERNATIONAL UNIVERSITY\Documents\GitHub\Project-DSA\scripts" />
       <recent name="C:\Users\huyng\OneDrive - VietNam National University - HCM INTERNATIONAL UNIVERSITY\Documents\GitHub\Project-DSA\scripts\states" />
       <recent name="C:\Users\huyng\OneDrive - VietNam National University - HCM INTERNATIONAL UNIVERSITY\Documents\GitHub\Project-DSA\config" />

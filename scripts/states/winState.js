@@ -3,9 +3,9 @@ const statisticsEnum = {
   row: {
     Player1: 0,
     Player2: 1,
-    bot: 2,
+    botPlayer: 2,
   },
-  metric: {
+  col: {
     matchesWon: 0,
     matchesLost: 1,
     shipsDestroyed: 2,
@@ -21,7 +21,7 @@ function roundTo(num) {
 }
 
 // Initialize state call
-let winStateCall = function () {
+var winStateCall = function () {
   fill(240, 218, 240);
 
   // display victory message too
@@ -91,7 +91,7 @@ let winStateCall = function () {
         );
         // number of ships destroyed
 
-        let numberOfShipsLost = 0;
+        var numberOfShipsLost = 0;
         for (let i = 0; i < 5; i++) {
           if (player1.currLife[i] === 0) {
             numberOfShipsLost++;
@@ -163,13 +163,13 @@ let winStateCall = function () {
             100.0
         );
         // number of ships destroyed
-        let numberOfShipsDestroyed = 0;
+        var numberOfShipsDestroyed = 0;
         for (let i = 0; i < 5; i++) {
           if (player2.currLife[i] === 0) {
             numberOfShipsDestroyed++;
           }
         }
-        let numberOfShipsLost = 0;
+       var numberOfShipsLost = 0;
         for (let i = 0; i < 5; i++) {
           if (player1.currLife[i] === 0) {
             numberOfShipsLost++;
@@ -243,13 +243,13 @@ let winStateCall = function () {
             100.0
         );
       // number of ships destroyed
-      let numberOfShipsDestroyed = 0;
+      var numberOfShipsDestroyed = 0;
       for (let i = 0; i < 5; i++) {
         if (player1.currLife[i] === 0) {
           numberOfShipsDestroyed++;
         }
       }
-      let numberOfShipsLost = 0;
+      var numberOfShipsLost = 0;
       for (let i = 0; i < 5; i++) {
         if (player2.currLife[i] === 0) {
           numberOfShipsLost++;
@@ -322,7 +322,7 @@ let winStateCall = function () {
             100
         );
       // number of ships destroyed
-      let numberOfShipsDestroyed = 0;
+      var numberOfShipsDestroyed = 0;
       for (let i = 0; i < 5; i++) {
         if (player1.currLife[i] === 0) {
           numberOfShipsDestroyed++;
@@ -335,7 +335,7 @@ let winStateCall = function () {
       statTable[statisticsEnum.row.Player1][statisticsEnum.col.shipsLost] +=
         bot.countShipStatus("lost");
       // number of ships lost
-      countMeteor;
+
       statTable[statisticsEnum.row.botPlayer][statisticsEnum.col.shipsLost] +=
         numberOfShipsDestroyed;
       statTable[statisticsEnum.row.Player1][
@@ -366,7 +366,7 @@ let winStateCall = function () {
       player1.initializeGrid();
       player2.initializeGrid();
       bot.initializeGrid();
-      createNewMultiplayerObject();
+      createNewMultiPlayerObject();
       createNewSinglePlayerObject();
     }
   }

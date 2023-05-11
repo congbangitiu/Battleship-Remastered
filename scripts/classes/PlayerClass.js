@@ -1,4 +1,4 @@
-var playerClass = (playerName, playerRole) => {
+var playerClass = function(playerName, playerRole) {
     // Inherits objects from Network Class
     networkClass.call(this);
 
@@ -10,12 +10,28 @@ var playerClass = (playerName, playerRole) => {
     // First, create an array with length 10, then inside each element of the array, we create new array of length 10
     // to form a 10x10 array
     this.gridHidden = new Array(10);
-    for (let i = 0; i < this.gridHidden.length; i++)
-        this.gridHidden[i] = new Array(10);
+    this.gridHidden[0] = new Array(10);
+    this.gridHidden[1] = new Array(10);
+    this.gridHidden[2] = new Array(10);
+    this.gridHidden[3] = new Array(10);
+    this.gridHidden[4] = new Array(10);
+    this.gridHidden[5] = new Array(10);
+    this.gridHidden[6] = new Array(10);
+    this.gridHidden[7] = new Array(10);
+    this.gridHidden[8] = new Array(10);
+    this.gridHidden[9] = new Array(10);
 
     this.gridActual = new Array(10);
-    for (let i = 0; i < this.gridActual.length; i++)
-        this.gridActual[i] = new Array(10);
+    this.gridActual[0] = new Array(10);
+    this.gridActual[1] = new Array(10);
+    this.gridActual[2] = new Array(10);
+    this.gridActual[3] = new Array(10);
+    this.gridActual[4] = new Array(10);
+    this.gridActual[5] = new Array(10);
+    this.gridActual[6] = new Array(10);
+    this.gridActual[7] = new Array(10);
+    this.gridActual[8] = new Array(10);
+    this.gridActual[9] = new Array(10);
 
     this.currLife = [2, 3, 3, 4, 5];
     this.name = playerName;
@@ -30,35 +46,35 @@ var playerClass = (playerName, playerRole) => {
     this.ship = [
         // Spacecraft 1
         {
-            begin: { x: 0, y : 0 },
-            end: { x: 0, y : 0 }
+            begin: {x: 0, y: 0},
+            end: {x: 0, y: 0}
         },
         // Spacecraft 2
         {
-            begin: { x: 0, y : 0 },
-            end: { x: 0, y : 0 }
+            begin: {x: 0, y: 0},
+            end: {x: 0, y: 0}
         },
         // Spacecraft 3
         {
-            begin: { x: 0, y : 0 },
-            end: { x: 0, y : 0 }
+            begin: {x: 0, y: 0},
+            end: {x: 0, y: 0}
         },
         // Spacecraft 4
         {
-            begin: { x: 0, y : 0 },
-            end: { x: 0, y : 0 }
+            begin: {x: 0, y: 0},
+            end: {x: 0, y: 0}
         },
         // Spacecraft 5
         {
-            begin: { x: 0, y : 0 },
-            end: { x: 0, y : 0 }
+            begin: {x: 0, y: 0},
+            end: {x: 0, y: 0}
         }
     ];
 };
 
 // Inherit methods from PlayerClass to playerClass
 // Used in a graphical user interface to display the current state of a game board or grid
-playerClass.prototype.drawGridActual = () => {
+playerClass.prototype.drawGridActual = function() {
     var i = 1, j = 1, indent = 0;
 
     if (this.playerRole === 2)
@@ -98,8 +114,8 @@ playerClass.prototype.drawGridActual = () => {
 };
 
 // Used in a graphical user interface to display the current state of a game board or grid
-playerClass.prototype.drawGridHidden = () => {
-    let i = 1, j = 1, indent = 0;
+playerClass.prototype.drawGridHidden = function()  {
+    var i = 1, j = 1, indent = 0;
 
     fill(255, 255, 255);
     textSize(30);
@@ -159,7 +175,7 @@ playerClass.prototype.drawGridHidden = () => {
 };
 
 // Used to place a ship on a game board or grid
-playerClass.prototype.arrangeShip = () => {
+playerClass.prototype.arrangeShip = function() {
     // solve random function ceiling
     var size;
     var a, b, i, num, shipOverlapped = false;
@@ -235,7 +251,7 @@ playerClass.prototype.arrangeShip = () => {
 };
 
 // Used to set up the initial state of a game board or grid
-playerClass.prototype.initializeGrid = () => {
+playerClass.prototype.initializeGrid = function () {
     for(var i = 0; i < 10; i++){
         for(var j = 0; j < 10; j++){
             this.gridHidden[i][j] = randomMap[i][j];
@@ -282,15 +298,12 @@ playerClass.prototype.initializeGrid = () => {
 };
 
 // Used to determine whether a ship on the game board or grid has been hit and sunk, or whether it is still floating
-playerClass.prototype.checkShipLifeStatus = () => {
-    if ((this.currLife[0] + this.currLife[1] + this.currLife[2] + this.currLife[3] + this.currLife[4]) === 0) {
-        return true;
-    }
-    return false;
+playerClass.prototype.checkShipLifeStatus = function()  {
+    return (this.currLife[0] + this.currLife[1] + this.currLife[2] + this.currLife[3] + this.currLife[4]) === 0;
 };
 
 //Used to implement the main game loop for a turn-based game
-playerClass.prototype.play = (playerRole) => {
+playerClass.prototype.play = function(playerRole)  {
     var indent = 0, i = 1, j = 1;
     // if all opponents ships have sunk declare victory
     if (this.checkShipLifeStatus() === true) {
@@ -341,12 +354,7 @@ playerClass.prototype.play = (playerRole) => {
                             this.hitY = j - 1;
                             //send your hit coordinates info to the server
                             // send player2.hitX and player2.hitY
-                            if (playerIs === 2) {
-                                playerOneTurn = true;
-                            }
-                            else {
-                                playerOneTurn = false;
-                            }
+                            playerOneTurn = playerRole === 2;
                             return 0;
                         }
 
@@ -356,28 +364,6 @@ playerClass.prototype.play = (playerRole) => {
                 }
             }
         }
-        // if above if statement doesn't return than extra shot
     }
     return 0;
-};
-
-// Used in a networked multiplayer game to receive information about the opponent's ship deployments from the game server
-playerClass.prototype.deployShipsReceivedFromServer = () => {
-    var i = 0, j = 0;
-
-    for (i = 0; i < 5; i++) {
-        // ship is arranged horizontally
-        if (this.ship[i].beign.x === this.ship[i].end.x) {
-            for (j = 0; j < this.shipType[i].size; j++) {
-                this.gridActual[this.ship[i].begin.x][this.ship[i].begin.y + j] = 1;
-            }
-        }
-
-        //ship is arranged vertically
-        else {
-            for (j = 0; j < this.shipType[i].size; j++) {
-                this.gridActual[this.ship[i].begin.x + j][this.ship[i].begin.y] = 1;
-            }
-        }
-    }
 };

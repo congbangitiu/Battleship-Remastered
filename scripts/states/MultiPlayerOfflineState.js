@@ -7,7 +7,6 @@ var multiPlayerOfflineState = function () {
 
     // draws 10*10 grid for player 1
     if (!player1.confirmButtonPushed) {
-
         player1.drawGridActual();
         player1AutoButton.draw();
     }
@@ -17,7 +16,6 @@ var multiPlayerOfflineState = function () {
 
     // draws 10*10 grid for player 2
     if (!player2.confirmButtonPushed) {
-
         player2.drawGridActual();
         player2AutoButton.draw();
     }
@@ -35,22 +33,18 @@ var multiPlayerOfflineState = function () {
             if (!mouseIsPressed) {
                 //if mouse is not pressed then light up button
                 player1AutoButton.lightUpButton();
-
             }
             if (mouseIsPressed) {
-
                 player1.initializeGrid();
                 player1.arrangeShip();
                 player1.autoButtonPushed = true;
                 mouseIsPressed = false;
-                //shipArranged = true;
             }
         }
     }
 
     // confirm button for player1
     if (player1.autoButtonPushed) {
-
         player1ConfirmButton.draw();
 
         if (player1ConfirmButton.insideButton()) {
@@ -64,14 +58,12 @@ var multiPlayerOfflineState = function () {
                 player1.shipArranged = true;
                 player1.confirmButtonPushed = true;
                 mouseIsPressed = false;                
-                //shipArranged = true;
             }
         }
     }
 
     // auto button for player 2 
     if (player2.shipArranged === false) {
-
         player2AutoButton.draw();
 
         if (player2AutoButton.insideButton()) {
@@ -81,19 +73,16 @@ var multiPlayerOfflineState = function () {
                 player2AutoButton.lightUpButton();
             }
             if (mouseIsPressed) {
-
                 player2.initializeGrid();                
                 player2.arrangeShip();
                 player2.autoButtonPushed = true;
                 mouseIsPressed = false;                
-                //shipArranged = true;
             }
         }
     }
 
     // confirm button for player2
     if (player2.autoButtonPushed) {
-
         player2ConfirmButton.draw();
 
         if (player2ConfirmButton.insideButton()) {
@@ -101,7 +90,6 @@ var multiPlayerOfflineState = function () {
             if (!mouseIsPressed) {
                 //if mouse is not pressed then light up button
                 player2ConfirmButton.lightUpButton();
-
             }
             if (mouseIsPressed) {
 
@@ -109,7 +97,7 @@ var multiPlayerOfflineState = function () {
                 player2.confirmButtonPushed = true;
                 player2.shipArranged = true;
                 // swap maps of players
-                mapSwap("multiPlayer");
+                swapMap("multi-player");
                 mouseIsPressed = false;                
             }
         }
@@ -118,38 +106,25 @@ var multiPlayerOfflineState = function () {
     // if both players have deployed ships start the game
     // main multiplayer pass N play if statement
     if (player1.confirmButtonPushed && player2.confirmButtonPushed) {
-
         if(playerSwitching){
-
             // delay loop
             playerSwitchingIterator ++;
 
-                if(playerOneTurn){
-                anim.showMessage("PLAYER 1 TURN");
-                }
-                else{
-                anim.showMessage("PLAYER 2 TURN");
-                }
+            if(playerOneTurn){
+                animate.showMessage("PLAYER 1 TURN");
+            }
+            else{
+                animate.showMessage("PLAYER 2 TURN");
+            }
 
             if(playerSwitchingIterator > 50){
-
                 playerSwitchingIterator = 0;
-
                 playerSwitching = false;
-
-                if(playerOneTurn === true){
-                playerOneTurn = false;
-                }
-                else{
-                    playerOneTurn = true;
-                }
-
-             }
+                playerOneTurn = playerOneTurn !== true;
+            }
         }
 
-        else  if (playerOneTurn) {
-
-
+        else if (playerOneTurn) {
             if (player2.play(2) === true) {
                 // make separate class for win 
                 winState = true;
@@ -157,15 +132,12 @@ var multiPlayerOfflineState = function () {
                 player2.win = true;
                 singlePlayerWin = false;
             }
-        }
-        else {
+        } else {
             if (player1.play(1) === true) {
-
                 winState = true;
                 multiPlayerOffline = false;
                 player1.win = true;
                 singlePlayerWin = false;
-
             }
         }
 
@@ -177,17 +149,15 @@ var multiPlayerOfflineState = function () {
         if (!mouseIsPressed) {
             //if mouse is not pressed then light up button
             backButton1.lightUpButton();
-
         }
         if (mouseIsPressed) {
             //if mouse is pressed go to menu
             multiPlayerOffline = false;
             menu = true;
-            createNewMultiplayerObject();
+            createNewMultiPlayerObject();
             player1.initializeGrid();
             player2.initializeGrid();
             mouseIsPressed = false;
-            //mouseIsPressed = false;
         }
     }
 };
