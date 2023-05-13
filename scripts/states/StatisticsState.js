@@ -41,11 +41,11 @@ var statisticsState = function() {
   text("PLAYER 2", 30 + statTableX - slotWidth, 12.5 + statTableY + slotHeight * 1, slotWidth, slotHeight);
   text("     BOT", 30 + statTableX - slotWidth, 12.5 + statTableY + slotHeight * 2, slotWidth, slotHeight);
 
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 6; j++) {
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 6; j++) {
       var highestValInCol = false;
 
-      for (let k = 0; k < 3; k++) {
+      for (var k = 0; k < 3; k++) {
         if (statTable[i][j] >= statTable[k][j]) {
           highestValInCol = true;
         } else {

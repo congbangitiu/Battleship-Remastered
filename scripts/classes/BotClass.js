@@ -21,7 +21,7 @@ botClass.prototype = Object.create(playerClass.prototype);
 
 botClass.prototype.countShipStatus = function(str) {
     var numberOfShipsDestroyed = 0;
-    for (let i = 0; i < 5; i++)
+    for (var i = 0; i < 5; i++)
         if(bot.currLife[i] === 0)
             numberOfShipsDestroyed++;
 
@@ -34,11 +34,11 @@ botClass.prototype.drawProbabilityDensityGrid = function() {
 
     for (i = 0; i < 10; i++) {
         for (j = 0; j < 10; j++) {
-            if (this.grid[i][j] > 2) {
+            if (this.grid && this.grid[i] && this.grid[i][j] > 2) {
                 fill(this.grid[i][j] * 50, 0, 0);
                 rect(indent + 550 + 30 * (i + 1), 50 + 30 * (j + 1), 30, 30);
             }
-            else if (this.grid[i][j] === 2) {
+            else if (this.grid && this.grid[i] && this.grid[i][j] === 2) {
                 fill(0, 0, 0);
                 rect(indent + 550 + 30 * (i + 1), 50 + 30 * (j + 1), 30, 30);
             }
@@ -265,8 +265,8 @@ botClass.prototype.play = function() {
 
     if ((this.missed_target_x.length > 0) && (!this.chainFire)) {
         this.chainFire = true;
-        const tempX = this.missed_target_x.pop();
-        const tempY = this.missed_target_y.pop();
+        var tempX = this.missed_target_x.pop();
+        var tempY = this.missed_target_y.pop();
 
         // Give lock high probability
         this.grid[tempX][tempY] = this.grid[tempX][tempY] + 20;

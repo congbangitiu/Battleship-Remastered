@@ -11,6 +11,8 @@ body{
     -webkit-user-select: none;
     cursor: not-allowed;
     pointer-events: none;
+    text-align: center;
+    color: white;
 }
 
 .footer {

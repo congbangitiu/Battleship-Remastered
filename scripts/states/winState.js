@@ -92,7 +92,7 @@ var winStateCall = function () {
         // number of ships destroyed
 
         var numberOfShipsLost = 0;
-        for (let i = 0; i < 5; i++) {
+        for (var i = 0; i < 5; i++) {
           if (player1.currLife[i] === 0) {
             numberOfShipsLost++;
           }
@@ -164,13 +164,13 @@ var winStateCall = function () {
         );
         // number of ships destroyed
         var numberOfShipsDestroyed = 0;
-        for (let i = 0; i < 5; i++) {
+        for (var i = 0; i < 5; i++) {
           if (player2.currLife[i] === 0) {
             numberOfShipsDestroyed++;
           }
         }
        var numberOfShipsLost = 0;
-        for (let i = 0; i < 5; i++) {
+        for (var i = 0; i < 5; i++) {
           if (player1.currLife[i] === 0) {
             numberOfShipsLost++;
           }
@@ -244,13 +244,13 @@ var winStateCall = function () {
         );
       // number of ships destroyed
       var numberOfShipsDestroyed = 0;
-      for (let i = 0; i < 5; i++) {
+      for (var i = 0; i < 5; i++) {
         if (player1.currLife[i] === 0) {
           numberOfShipsDestroyed++;
         }
       }
       var numberOfShipsLost = 0;
-      for (let i = 0; i < 5; i++) {
+      for (var i = 0; i < 5; i++) {
         if (player2.currLife[i] === 0) {
           numberOfShipsLost++;
         }
@@ -323,7 +323,7 @@ var winStateCall = function () {
         );
       // number of ships destroyed
       var numberOfShipsDestroyed = 0;
-      for (let i = 0; i < 5; i++) {
+      for (var i = 0; i < 5; i++) {
         if (player1.currLife[i] === 0) {
           numberOfShipsDestroyed++;
         }
@@ -348,7 +348,7 @@ var winStateCall = function () {
     player1.drawGridActual();
   }
 
-  let backButton = new button("Menu", 150, 450);
+  var backButton = new button("Menu", 150, 450);
   backButton.draw();
 
   if (backButton.insideButton()) {

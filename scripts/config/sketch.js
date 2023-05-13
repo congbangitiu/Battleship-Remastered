@@ -35,12 +35,12 @@ var playerSwitching = true;
 var playerSwitchingIterator = 0;
 
 var randomMap = new Array(10);
-for (let i = 0; i < randomMap.length; i++)
+for (var i = 0; i < randomMap.length; i++)
     randomMap[i] = new Array(10);
 
 var initializeRandomMap = function()  {
-    for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < 10; j++) {
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
             randomMap[i][j] = 0;
         }
     }
@@ -48,8 +48,8 @@ var initializeRandomMap = function()  {
 
 initializeRandomMap();
 
-for (let i = 0; i < 10; i++) {
-    for (let j = 0; j < 10; j++) {
+for (var i = 0; i < 10; i++) {
+    for (var j = 0; j < 10; j++) {
         randomMap[i][j] = 0;
     }
 }
@@ -58,13 +58,13 @@ const ISLAND = -2;
 
 // Creating statistics table
 var statTable = new Array(3);
-for (let i = 0; i < statTable.length; i++) {
+for (var i = 0; i < statTable.length; i++) {
     statTable[i] = new Array(6);
 }
 
 // Initializing statistic table
-for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 6; j++) {
+for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 6; j++) {
         statTable[i][j] = 0;
     }
 }

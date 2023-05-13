@@ -1,6 +1,5 @@
 var singlePlayerState = function () {
-    // background(0, 255, 255,100);
-    var backButton1 = new button("  back", 350, 450);
+    var backButton1 = new button("Back", 350, 450);
     var DensityLensButtonOn = new button("DensityLensON", 550, 450, 230);
     var DensityLensButtonOff = new button("DensityLensOFF", 810, 450, 240);
 
@@ -85,7 +84,6 @@ var singlePlayerState = function () {
     // if both players have deployed ships start the game
     // main multiplayer pass N play if statement
     if (player1.confirmButtonPushed) {
-
         if (playerSwitching) {
             // delay loop
             playerSwitchingIterator++;
@@ -125,8 +123,6 @@ var singlePlayerState = function () {
         if (densityLens === true) {
             bot.drawProbabilityDensityGrid();
         }
-
-
     }
 
     // back button  - common for both the players

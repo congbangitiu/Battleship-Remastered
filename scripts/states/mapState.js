@@ -160,8 +160,8 @@ var newMapState = function () {
     }
     if (mouseIsPressed) {
       //if mouse is pressed go to menu
-      for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < 10; j++) {
+      for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
           randomMap[i][j] = 0;
         }
       }
