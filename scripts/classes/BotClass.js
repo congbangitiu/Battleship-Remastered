@@ -34,11 +34,11 @@ botClass.prototype.drawProbabilityDensityGrid = function() {
 
     for (i = 0; i < 10; i++) {
         for (j = 0; j < 10; j++) {
-            if (this.grid && this.grid[i] && this.grid[i][j] > 2) {
+            if (this.grid[i][j] > 2) {
                 fill(this.grid[i][j] * 50, 0, 0);
                 rect(indent + 550 + 30 * (i + 1), 50 + 30 * (j + 1), 30, 30);
             }
-            else if (this.grid && this.grid[i] && this.grid[i][j] === 2) {
+            else if (this.grid[i][j] === 2) {
                 fill(0, 0, 0);
                 rect(indent + 550 + 30 * (i + 1), 50 + 30 * (j + 1), 30, 30);
             }
@@ -72,7 +72,7 @@ botClass.prototype.find = function(x, y, horiz) {
     }
 
     return 0;
-}
+};
 
 botClass.prototype.gridFilter = function(i, j, horiz, currShip) {
     var k;
@@ -82,7 +82,6 @@ botClass.prototype.gridFilter = function(i, j, horiz, currShip) {
             if (this.grid[i][j + k] <= 0) {
                 return 0;
             }
-
             if (!this.chainFire) {
                 if (this.grid[i][j + k] === 1) {
                     return 0;
@@ -130,7 +129,7 @@ botClass.prototype.largestAliveShip = function() {
              return i;
         }
     }
-}
+};
 
 botClass.prototype.smallestAliveShip = function() {
     var i;
@@ -198,7 +197,7 @@ botClass.prototype.calcProbabilityDensity = function() {
     }
 
     for (i = 0; i < 10; i++) {
-        for (j = 0; j , 10 - this.curr_big_ship; i++) {
+        for (j = 0; j <= 10 - this.curr_big_ship; j++) {
             // Enable probability filter when chainFire is active
             if (this.chainFire && !(this.gridFilter(i, j, 1, this.curr_big_ship) && this.find(i, j, 1))) {
                 continue;
