@@ -15,7 +15,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/congbangitiu/Battleship-Remastered.git">
-    <img src="./assets/img/logo.jpg" alt="Logo" width="200">
+    <img src="./assets/img/logo.jpg" alt="Logo" width="250">
 </a>
 
   <h3 align="center">ALGORITHM & DATA STRUCTURES</h3>
@@ -105,23 +105,19 @@ Motivation is what drives us to succeed in life, and when it comes to computer s
 
 <br />
 
-<!-- CHARTS -->
-## Techniques <a name="Techniques"></a>:joystick:
-
-
-<br />
 
 
 <!-- FEATURES -->
 ## Features <a name="Features"></a>:joystick: 
-- Completed: UX/UI,
-- Incompleted: 
+- Completed: UX/UI, 2 players
+- Incompleted: Network playing
 <br />
 
 <!-- CHALLENGES -->
 ## Challenges<a name="Challenges">:bangbang:
 
 - Task allocation for each team member
+- Time management
 - Using platform for communication (Drive, Trello)
 - Working environment (Github)
 <br />
@@ -146,7 +142,7 @@ We would want to express our gratitude to Dr. Tran Thanh Tung for providing us w
 
 <br />
 
-<p align="right">(<a href="#top">Back to top</a>)</p>
+<p align="right"><a href="#top">Back to top ↑</a></p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
