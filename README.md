@@ -15,7 +15,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/congbangitiu/Battleship-Remastered.git">
-    <img src="./assets/img/logo.png" alt="Logo" width="200">
+    <img src="./assets/img/logo.jpg" alt="Logo" width="200">
 </a>
 
   <h3 align="center">ALGORITHM & DATA STRUCTURES</h3>
