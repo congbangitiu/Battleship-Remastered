@@ -14,12 +14,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Nhathuy1305/OOP_BOMBERMAN_GAME.git">
-    <img src="./assets/img/logo_readme.png" alt="Logo" width="200" height="200">
+  <a href="https://github.com/congbangitiu/Battleship-Remastered.git">
+    <img src="./assets/img/logo.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">ALGORITHM & DATA STRUCTURES</h3>
-  <h4 align="center">Team Name: Flopped Team!</h4>
+  <h4 align="center">Team Name: JOSEPH</h4>
 
   <p align="center">
     An online game created with HTML, CSS, Javascript and p5.js for Algorithm & Data Structures course in International University - VNUHCM!
@@ -87,13 +87,13 @@ Motivation is what drives us to succeed in life, and when it comes to computer s
 
 ### Task Allocation :ok_man:
 
-| Order | Task                                    |  Person   | Contribution (%) |
+| Order | Task                                    |  Assignee   | Contribution |
 | :---- | :-------------------------------------- | :-------: | :----------: |
-| 1     | Player class, Menu state      |  Cong Bang  |      20      |
-| 2     |  Multi-player State, Single player state, Statistics state  | Minh Vu |      20      |
-| 3     | New map state, Win state calling, Finding assets    | Quang Dieu |      20      |
-| 4     | Animation class, Button class, Ship class, Sketch, Draw, Swap map| Anh Tu  |      20      |
-| 4     | Project Management, Bot class, Instruction state | Nhat Huy  |      20      |
+| 1     | Player class, Menu state, Project Management      |  Cong Bang  |      20%     |
+| 2     |  Multi-player State, Single player state, Statistics state  | Minh Vu |      20%      |
+| 3     | New map state, Win state calling, Finding assets    | Quang Dieu |      20%      |
+| 4     | Animation class, Button class, Ship class, Sketch, Draw, Swap map| Anh Tu  |      20%      |
+| 5     | Github Management, Bot class, Instruction state | Nhat Huy  |      20%      |
 
 
 <br />
