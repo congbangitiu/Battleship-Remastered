@@ -44,7 +44,7 @@
 ## Introduction <a name="Introduction"></a> :bricks:
 
 <div align="center">
-<img src="screenshots/Intro.gif" alt="">
+<img src="./assets/screenshots/Intro.gif" alt="">
 </div>
 
 <div style="text-align:justify">
@@ -81,7 +81,7 @@ computer) once we finished coding made all the hard work completely worth it!
    git status
    ```
 4. Change branch
-   ```js
+   ```sh
    git checkout 'branch_name'
    ```
 
