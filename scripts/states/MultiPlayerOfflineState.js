@@ -9,8 +9,7 @@ var multiPlayerOfflineState = function () {
     if (!player1.confirmButtonPushed) {
         player1.drawGridActual();
         player1AutoButton.draw();
-    }
-    else {
+    } else {
         player1.drawGridHidden();
     }
 
@@ -18,8 +17,7 @@ var multiPlayerOfflineState = function () {
     if (!player2.confirmButtonPushed) {
         player2.drawGridActual();
         player2AutoButton.draw();
-    }
-    else {
+    } else {
         player2.drawGridHidden();
     }
 
@@ -57,7 +55,7 @@ var multiPlayerOfflineState = function () {
                 player1.autoButtonPushed = false;
                 player1.shipArranged = true;
                 player1.confirmButtonPushed = true;
-                mouseIsPressed = false;                
+                mouseIsPressed = false;
             }
         }
     }
@@ -73,10 +71,10 @@ var multiPlayerOfflineState = function () {
                 player2AutoButton.lightUpButton();
             }
             if (mouseIsPressed) {
-                player2.initializeGrid();                
+                player2.initializeGrid();
                 player2.arrangeShip();
                 player2.autoButtonPushed = true;
-                mouseIsPressed = false;                
+                mouseIsPressed = false;
             }
         }
     }
@@ -98,7 +96,7 @@ var multiPlayerOfflineState = function () {
                 player2.shipArranged = true;
                 // swap maps of players
                 swapMap("multi-player");
-                mouseIsPressed = false;                
+                mouseIsPressed = false;
             }
         }
     }
@@ -106,25 +104,22 @@ var multiPlayerOfflineState = function () {
     // if both players have deployed ships start the game
     // main multiplayer pass N play if statement
     if (player1.confirmButtonPushed && player2.confirmButtonPushed) {
-        if(playerSwitching){
+        if (playerSwitching) {
             // delay loop
-            playerSwitchingIterator ++;
+            playerSwitchingIterator++;
 
-            if(playerOneTurn){
+            if (playerOneTurn) {
                 animate.showMessage("PLAYER 1 TURN");
-            }
-            else{
+            } else {
                 animate.showMessage("PLAYER 2 TURN");
             }
 
-            if(playerSwitchingIterator > 50){
+            if (playerSwitchingIterator > 50) {
                 playerSwitchingIterator = 0;
                 playerSwitching = false;
                 playerOneTurn = playerOneTurn !== true;
             }
-        }
-
-        else if (playerOneTurn) {
+        } else if (playerOneTurn) {
             if (player2.play(2) === true) {
                 // make separate class for win 
                 winState = true;

@@ -1,5 +1,5 @@
 //draw function
-var menuState = function()  {
+var menuState = function () {
     //rectangle to go around the buttons
     fill(255, 100, 0, 220);
     rect(posX + 10, posY + 15, 350, 370, 60);

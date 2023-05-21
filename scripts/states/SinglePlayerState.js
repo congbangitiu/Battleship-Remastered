@@ -99,8 +99,7 @@ var singlePlayerState = function () {
                 playerSwitching = false;
                 playerOneTurn = playerOneTurn !== true;
             }
-        }
-        else if (playerOneTurn) {
+        } else if (playerOneTurn) {
             // argument 3 represents bot
             //  bot.play();
             if (bot.play() === true) {

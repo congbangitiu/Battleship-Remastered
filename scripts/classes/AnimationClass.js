@@ -22,33 +22,33 @@ class animation {
         // body - window
         fill(r - 100, g + 27, b - 50)
         ellipse(centerX + 34, centerY + 21, 25, 25);
-        
+
         // head
-        fill(g, b, r);     
+        fill(g, b, r);
         var tailWidth = bodyLength / 2;
         var tailHeight = bodyHeight / 2;
-        triangle(centerX + bodyLength * 1.5, centerY + bodyHeight/2,
-                centerX + bodyLength / 2 + tailWidth, centerY + tailHeight + bodyHeight/2,
-                centerX + bodyLength / 2 + tailWidth, centerY - tailHeight + bodyHeight/2);
+        triangle(centerX + bodyLength * 1.5, centerY + bodyHeight / 2,
+            centerX + bodyLength / 2 + tailWidth, centerY + tailHeight + bodyHeight / 2,
+            centerX + bodyLength / 2 + tailWidth, centerY - tailHeight + bodyHeight / 2);
         triangle(centerX + bodyLength / 2 - 5, centerY + bodyHeight,
-                centerX + bodyLength / 2 - tailWidth, centerY + bodyLength,
-                centerX + bodyLength / 2 - tailWidth, centerY + 43);
+            centerX + bodyLength / 2 - tailWidth, centerY + bodyLength,
+            centerX + bodyLength / 2 - tailWidth, centerY + 43);
         triangle(centerX + bodyLength / 2 - 5, centerY,
-                centerX + bodyLength / 2 - tailWidth, centerY,
-                centerX + bodyLength / 2 - tailWidth, centerY - 32);
+            centerX + bodyLength / 2 - tailWidth, centerY,
+            centerX + bodyLength / 2 - tailWidth, centerY - 32);
 
         // tail
         fill(b, r, g);
         rect(centerX, centerY + 5, bodyLength - 90, bodyHeight - 10);
     }
-    
+
     submarineGlass(submarine_X, submarine_Y) {
         fill(1, 36, 43);
         ellipse(submarine_X + 190, submarine_Y + 37, 45, 45);
         fill(183, 226, 235);
         ellipse(submarine_X + 190, submarine_Y + 37, 35, 35);
     }
-    
+
     drawShipGroup(x, y) {
         this.drawShip(x + 100, y + 100, 100, 167, 100);
         this.drawShip(x + 303, y + 100, 322, 144, 253);
@@ -57,7 +57,7 @@ class animation {
         this.drawShip(x + 331, y + 197, 155, 243, 146);
         this.drawShip(x + 65, y + 294, 310, 20, 290);
     }
-    
+
     drawSubmarine(submarine_X, submarine_Y) {
         fill(209, 4, 4);
         ellipse(submarine_X + 196, submarine_Y + 36, 105, 70);
@@ -75,7 +75,7 @@ class animation {
         this.submarineGlass(submarine_X + -164, submarine_Y + 1);
     }
 
-    showMessage(msg){
+    showMessage(msg) {
         background(255, 255, 255, 60);
         fill(237, 34, 93);
         strokeWeight(10);
@@ -111,7 +111,7 @@ class animation {
         }
 
         this.drawSubmarine(this.submarineX1, this.submarineY1);
-        this.drawSubmarine(this.submarineX2 , this.submarineY2);
+        this.drawSubmarine(this.submarineX2, this.submarineY2);
     }
 }
 

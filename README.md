@@ -18,8 +18,8 @@
     <img src="./assets/img/logo.jpg" alt="Logo" width="250">
 </a>
 
-  <h3 align="center">ALGORITHM & DATA STRUCTURES</h3>
-  <h4 align="center">Team Name: JOSEPH</h4>
+<h3 align="center">ALGORITHM & DATA STRUCTURES</h3>
+<h4 align="center">Team Name: JOSEPH</h4>
 
   <p align="center">
     An online game created with HTML, CSS, Javascript and p5.js for Algorithm & Data Structures course in International University - VNUHCM!
@@ -30,7 +30,9 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
+
 # Table of contents :round_pushpin:
+
 1. [Introduction](#Introduction)
 2. [Techniques](#Techniques)
 3. [Charts](#Charts)
@@ -47,21 +49,27 @@
 
 <div style="text-align:justify">
 
-We took an Algorithm & Data Structures course and the final project was creating a Battleship game. It was challenging but also incredibly fun! We had to implement different algorithms for generating ships and randomizing their placement on a grid, along with logic that could handle both human and computer input. That was just the tip of the iceberg though - we also had to handle game states and error checking, all while optimizing for speed and efficiency. One thing I loved about this project was how it brought together everything we learned throughout the course - from different data structures like linked lists to more advanced algorithms like minimax. Plus, getting to play against friends (or the computer) once we finished coding made all the hard work completely worth it!
+We took an Algorithm & Data Structures course and the final project was creating a Battleship game. It was challenging
+but also incredibly fun! We had to implement different algorithms for generating ships and randomizing their placement
+on a grid, along with logic that could handle both human and computer input. That was just the tip of the iceberg
+though - we also had to handle game states and error checking, all while optimizing for speed and efficiency. One thing
+I loved about this project was how it brought together everything we learned throughout the course - from different data
+structures like linked lists to more advanced algorithms like minimax. Plus, getting to play against friends (or the
+computer) once we finished coding made all the hard work completely worth it!
 
 </div>
 
 ### Team Members :couplekiss_man_man:
 
-| Order |         Name          |     ID      |            Email            |                       Github account                        |                              Facebook                              |
-| :---: | :-------------------: | :---------: | :-------------------------: | :---------------------------------------------------------: | :----------------------------------------------------------------: |
-|   1   | Nguyen Luan Cong Bang | ITITIU20163| bangnguyen.071102@gmail.com |       [congbangitiu](https://github.com/congbangitiu)       |     [Công Bằng](https://www.facebook.com/congbang.nguyenluan)      |
-|   2  | Pham Minh Vu | ITDSIU20354 | pmvu.ityu@gmail.com |       [PMinhVu](https://github.com/PMinhVu)       |     [Vu Pham](https://www.facebook.com/profile.php?id=100004748865639&comment_id=Y29tbWVudDoyNTE4MjA3Mjc4MzQ3NTQzXzgwNzk3Njg4MDc0OTcyNg%3D%3D)      |
-|   3   |   Nguyen Quang Dieu  | ITDSIU20031 | dieu5084@gmail.com |           [itzmealvin](https://github.com/itzmealvin)           | [Nguyen Quang Dieu](https://www.facebook.com/it.z.me.quangdieu) |
-|   4   | Nguyen Hoang Anh Tu | ITDSIU20090 | nghganhtu@gmail.com  | [nghganhtu](https://github.com/nghganhtu) |         [Joseph Nguyen](https://www.facebook.com/profile.php?id=100084848316418)         |
-|   5   |     Dang Nhat Huy     | ITITIU20043 |    dnhuy.ityu@gmail.com     |        [Nhathuy1305](https://github.com/Nhathuy1305)        |          [Nhật Huy](https://www.facebook.com/nhhuy.135/)           |
+| Order |         Name          |     ID      |            Email            |                 Github account                  |                                                                  Facebook                                                                  |
+|:-----:|:---------------------:|:-----------:|:---------------------------:|:-----------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------:|
+|   1   | Nguyen Luan Cong Bang | ITITIU20163 | bangnguyen.071102@gmail.com | [congbangitiu](https://github.com/congbangitiu) |                                         [Công Bằng](https://www.facebook.com/congbang.nguyenluan)                                          |
+|   2   |     Pham Minh Vu      | ITDSIU20354 |     pmvu.ityu@gmail.com     |      [PMinhVu](https://github.com/PMinhVu)      | [Vu Pham](https://www.facebook.com/profile.php?id=100004748865639&comment_id=Y29tbWVudDoyNTE4MjA3Mjc4MzQ3NTQzXzgwNzk3Njg4MDc0OTcyNg%3D%3D) |
+|   3   |   Nguyen Quang Dieu   | ITDSIU20031 |     dieu5084@gmail.com      |   [itzmealvin](https://github.com/itzmealvin)   |                                      [Nguyen Quang Dieu](https://www.facebook.com/it.z.me.quangdieu)                                       |
+|   4   |  Nguyen Hoang Anh Tu  | ITDSIU20090 |     nghganhtu@gmail.com     |    [nghganhtu](https://github.com/nghganhtu)    |                                  [Joseph Nguyen](https://www.facebook.com/profile.php?id=100084848316418)                                  |
+|   5   |     Dang Nhat Huy     | ITITIU20043 |    dnhuy.ityu@gmail.com     |  [Nhathuy1305](https://github.com/Nhathuy1305)  |                                              [Nhật Huy](https://www.facebook.com/nhhuy.135/)                                               |
 
-### Installation :dart: 
+### Installation :dart:
 
 1. Open the terminal on your IDE
 2. Clone the repo
@@ -81,64 +89,78 @@ We took an Algorithm & Data Structures course and the final project was creating
 
 <div style="text-align:justify">
 
-Motivation is what drives us to succeed in life, and when it comes to computer science, algorithms & data structures provide the necessary tools to achieve that success. The classic game of Battleship relies heavily on these concepts as players must efficiently search through a grid of potential targets while maximizing their chances of hitting the opponent's ships. Optimization is key in this game, as slow searching can mean the difference between victory and defeat. This is where algorithms come into play - by implementing sophisticated searching techniques such as binary search or A* search, players can quickly traverse the board and locate enemy ships with minimal effort. Likewise, data structures like hash tables assist in storing player moves for easy retrieval later on. In combining these methods with strategic planning and intuition, players can become masters of modern-day Battleship strategy.
+Motivation is what drives us to succeed in life, and when it comes to computer science, algorithms & data structures
+provide the necessary tools to achieve that success. The classic game of Battleship relies heavily on these concepts as
+players must efficiently search through a grid of potential targets while maximizing their chances of hitting the
+opponent's ships. Optimization is key in this game, as slow searching can mean the difference between victory and
+defeat. This is where algorithms come into play - by implementing sophisticated searching techniques such as binary
+search or A* search, players can quickly traverse the board and locate enemy ships with minimal effort. Likewise, data
+structures like hash tables assist in storing player moves for easy retrieval later on. In combining these methods with
+strategic planning and intuition, players can become masters of modern-day Battleship strategy.
 
 </div>
 
 ### Task Allocation :ok_man:
 
-| Order | Task                                    |  Assignee   | Contribution |
-| :---- | :-------------------------------------- | :-------: | :----------: |
-| 1     | Player class, Menu state, Project Management      |  Cong Bang  |      20%     |
-| 2     |  Multi-player State, Single player state, Statistics state  | Minh Vu |      20%      |
-| 3     | New map state, Win state calling, Finding assets    | Quang Dieu |      20%      |
-| 4     | Animation class, Button class, Ship class, Sketch, Draw, Swap map| Anh Tu  |      20%      |
-| 5     | Github Management, Bot class, Instruction state | Nhat Huy  |      20%      |
-
+| Order | Task                                                              |  Assignee  | Contribution |
+|:------|:------------------------------------------------------------------|:----------:|:------------:|
+| 1     | Player class, Menu state, Project Management                      | Cong Bang  |     20%      |
+| 2     | Multi-player State, Single player state, Statistics state         |  Minh Vu   |     20%      |
+| 3     | New map state, Win state calling, Finding assets                  | Quang Dieu |     20%      |
+| 4     | Animation class, Button class, Ship class, Sketch, Draw, Swap map |   Anh Tu   |     20%      |
+| 5     | Github Management, Bot class, Instruction state                   |  Nhat Huy  |     20%      |
 
 <br />
 
 ## Techniques <a name="Techniques"></a>:joystick:
+
 - Language: [JavaScript](https://www.javascript.com)
 - Library: [p5.js](https://p5js.org)
-
 
 <br />
 
 
 
 <!-- FEATURES -->
-## Features <a name="Features"></a>:joystick: 
+
+## Features <a name="Features"></a>:joystick:
+
 - Completed: UX/UI, 2 players
 - Incompleted: Network playing
-<br />
+  <br />
 
 <!-- CHALLENGES -->
+
 ## Challenges<a name="Challenges">:bangbang:
 
 - Task allocation for each team member
 - Time management
 - Using platform for communication (Drive, Trello)
 - Working environment (Github)
-<br />
-	
+  <br />
+
 ## Acknowledgments<a name="Acknowledgments">:brain:
+
 <div style="text-align:justify">
 
-We would want to express our gratitude to Dr. Tran Thanh Tung for providing us with the chance to participate in this project and apply what we learned in theory into practice. This project's learning curve was steep, but it was well worth it for all of us. We have learned more about interface technologies to construct a functioning application that interacts with our project. Sir, we want to thank you again for all the hard work and expertise that you have put into your teaching. We'll make sure that all we've learned doesn't go to waste, and that we can master them better from now on :heart:
+We would want to express our gratitude to Dr. Tran Thanh Tung for providing us with the chance to participate in this
+project and apply what we learned in theory into practice. This project's learning curve was steep, but it was well
+worth it for all of us. We have learned more about interface technologies to construct a functioning application that
+interacts with our project. Sir, we want to thank you again for all the hard work and expertise that you have put into
+your teaching. We'll make sure that all we've learned doesn't go to waste, and that we can master them better from now
+on :heart:
 
 </div>
 
 <br />
 
-
 ## References<a name="References">  :eye::tongue::eye:
+
 1. [danielrzhang](https://github.com/danielrzhang/Tank-Buster.git)
 2. [veykos](https://github.com/veykos/Battleships.git)
 3. [abdullahjamal1](https://github.com/abdullahjamal1/battleshipBoardGame.git)
 4. [Janekk](https://github.com/Janekk/Battleships.git)
 5. [billmei](https://github.com/billmei/battleboat.git)
-
 
 <br />
 
@@ -148,10 +170,17 @@ We would want to express our gratitude to Dr. Tran Thanh Tung for providing us w
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/congbangitiu/Battleship-Remastered.svg?style=for-the-badge
+
 [contributors-url]: https://github.com/congbangitiu/Battleship-Remastered/graphs/contributors
+
 [forks-shield]: https://img.shields.io/github/forks/congbangitiu/Battleship-Remastered.svg?style=for-the-badge
+
 [forks-url]: https://github.com/congbangitiu/Battleship-Remastered/network/members
+
 [stars-shield]: https://img.shields.io/github/stars/congbangitiu/Battleship-Remastered.svg?style=for-the-badge
+
 [stars-url]: https://github.com/congbangitiu/Battleship-Remastered/stargazers
+
 [issues-shield]: https://img.shields.io/github/issues/congbangitiu/Battleship-Remastered.svg?style=for-the-badge
+
 [issues-url]: https://github.com//congbangitiu/Battleship-Remastered/issues

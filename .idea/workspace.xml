@@ -5,8 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08915cc3-66d0-4bb3-94d2-f7397ba1d6b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/bug_report.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/bug_report.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/SECURITY.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/SECURITY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/pull_request_template.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/pull_request_template.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/codeql.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/codeql.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/logo1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/p5.js" beforeDir="false" afterPath="$PROJECT_DIR$/libs/p5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/AnimationClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/AnimationClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/BotClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/BotClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/NetworkClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/NetworkClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/PlayerClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/PlayerClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/classes/ShipClass.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/classes/ShipClass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/config/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/config/sketch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/draw.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/draw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/MultiPlayerOfflineState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/MultiPlayerOfflineState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/SinglePlayerState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/SinglePlayerState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/StatisticsState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/StatisticsState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/mapState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/mapState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/menuState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/menuState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/states/winState.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/states/winState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/swapMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/swapMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +49,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="NamedScopeManager">
+    <scope name="SCOPE1" pattern="file:*.js||file:*.css||file:*.html||file:*.xml||file:*.iml" />
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2LlM4zVb1DBRrQlnSEiwQq77VCC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -50,6 +76,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -88,6 +116,7 @@
       <workItem from="1683817553853" duration="300000" />
       <workItem from="1683873663933" duration="7800000" />
       <workItem from="1683947283901" duration="7680000" />
+      <workItem from="1684686651417" duration="1220000" />
     </task>
     <servers />
   </component>

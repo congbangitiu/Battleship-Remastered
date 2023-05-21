@@ -16,7 +16,7 @@ var animate = new animation();
  * It invokes different gameStates based on values
  */
 
-var draw = function() {
+var draw = function () {
     animate.animationPlay();
 
     if (densityLens) {
@@ -24,23 +24,17 @@ var draw = function() {
     }
     if (menu === true) {
         menuState();
-    }
-    else if (makeNewMap === true) {
+    } else if (makeNewMap === true) {
         newMapState();
-    }
-    else if (singlePlayer === true) {
+    } else if (singlePlayer === true) {
         singlePlayerState();
-    }
-    else if (instructions === true) {
+    } else if (instructions === true) {
         instructionState();
-    }
-    else if (multiPlayerOffline === true) {
+    } else if (multiPlayerOffline === true) {
         multiPlayerOfflineState();
-    }
-    else if (statistics === true) {
+    } else if (statistics === true) {
         statisticsState();
-    }
-    else if (winState === true) {
+    } else if (winState === true) {
         winStateCall();
     }
 };
