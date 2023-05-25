@@ -86,7 +86,7 @@ var islandsCount = 0;
 
 var newMapState = function () {
 
-    var backButton = new button("back", 250, 450);
+    var backButton = new button("back", 260, 450);
     var newMapButton = new button("new map", 450, 450);
     var startButton = new button("start", 650, 450);
 

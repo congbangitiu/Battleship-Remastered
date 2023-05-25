@@ -4,10 +4,10 @@ var player1ConfirmButton = new button("confirm", 250, 400);
 var player2ConfirmButton = new button("confirm", 750, 400);
 
 var posX = 400, posY = 70;
-var singlePlayerButton = new button("single-player", posX + 100, posY + 40);
-var multiPlayerButton = new button("multi-player", posX + 100, posY + 90);
-var instructionButton = new button("Instructions", posX + 100, posY + 190);
-var statisticsButton = new button("statistics", posX + 100, posY + 290);
+var singlePlayerButton = new button("Singleplayer", posX + 150, posY + 40);
+var multiPlayerButton = new button("Multiplayer", posX + 150, posY + 120);
+var instructionButton = new button("Instructions", posX + 150, posY + 200);
+var statisticsButton = new button("Statistics", posX + 150, posY + 280);
 
 var animate = new animation();
 

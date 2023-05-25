@@ -9,10 +9,10 @@ var button = function (str, x, y, w = 170, h = 40) {
 // drawing the button on the canvas
 button.prototype.draw = function () {
     fill(0, 210, 0, 200);
-    rect(this.x, this.y, this.width, this.height, 10);
+    rect(this.x, this.y, this.width + 20, this.height + 20, 10);
     fill(0, 0, 0);
     textSize(30);
-    text(this.txt, this.x + 11, this.y + 30);
+    text(this.txt, this.x + 11, this.y + 40);
 };
 
 //checks if the mouse pointer is inside the button area
@@ -27,5 +27,5 @@ button.prototype.insideButton = function () {
 //change the button's color when the mouse pointer is over the button
 button.prototype.lightUpButton = function () {
     fill(240, 218, 240, 100);
-    rect(this.x, this.y, this.width, this.height, 10);
+    rect(this.x, this.y, this.width + 20, this.height + 20, 10);
 };
