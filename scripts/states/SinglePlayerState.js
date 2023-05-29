@@ -1,7 +1,7 @@
 var singlePlayerState = function () {
-    var backButton1 = new button("Back", 350, 450);
-    var DensityLensButtonOn = new button("DensityLensON", 550, 450, 230);
-    var DensityLensButtonOff = new button("DensityLensOFF", 810, 450, 240);
+    var backButton1 = new button("    Back", 580, 650);
+    var DensityLensButtonOn = new button(" DensityLensON", 830, 650, 230);
+    var DensityLensButtonOff = new button(" DensityLensOFF", 1140, 650, 240);
 
     backButton1.draw();
 
@@ -91,7 +91,7 @@ var singlePlayerState = function () {
             if (playerOneTurn) {
                 animate.showMessage("PLAYER 1 TURN");
             } else {
-                animate.showMessage("BOT TURN");
+                animate.showMessage("     BOT TURN");
             }
 
             if (playerSwitchingIterator > 50) {

@@ -1,12 +1,13 @@
 ////////////////////////////// ANIMATION //////////////////////////////////////////////////////////////
+// Chỉnh vị trí thuyền với nền game
 class animation {
     constructor() {
         this.submarineX1 = 1300;
-        this.submarineY1 = 230;
+        this.submarineY1 = 130;
         this.submarineX2 = -230;
-        this.submarineY2 = 140;
+        this.submarineY2 = 740;
         this.fishX1 = 0;
-        this.fishX2 = -500;
+        this.fishX2 = -1200;
         this.fishY = 0;
     }
 
@@ -20,11 +21,11 @@ class animation {
         rect(centerX, centerY, bodyLength, bodyHeight);
 
         // body - window
-        fill(r - 100, g + 27, b - 50)
+        fill(r - 10, g + 20, b - 15)
         ellipse(centerX + 34, centerY + 21, 25, 25);
 
         // head
-        fill(g, b, r);
+        fill(r + 10, g - 20, b + 15);
         var tailWidth = bodyLength / 2;
         var tailHeight = bodyHeight / 2;
         triangle(centerX + bodyLength * 1.5, centerY + bodyHeight / 2,
@@ -50,24 +51,24 @@ class animation {
     }
 
     drawShipGroup(x, y) {
-        this.drawShip(x + 100, y + 100, 100, 167, 100);
-        this.drawShip(x + 303, y + 100, 322, 144, 253);
-        this.drawShip(x + 164, y + 229, 292, 243, 112);
-        this.drawShip(x + 264, y + 303, 155, 118, 253);
-        this.drawShip(x + 331, y + 197, 155, 243, 146);
-        this.drawShip(x + 65, y + 294, 310, 20, 290);
+        this.drawShip(x + 303, y + 20, 	79, 79, 127);
+        this.drawShip(x + 164, y + 260, 54, 53, 109);
+        this.drawShip(x - 150, y + 340, 230, 230, 237);
+        this.drawShip(x + 450, y + 385, 104, 104, 145);
+        this.drawShip(x + 264, y + 510, 180, 179, 200);
+        this.drawShip(x + 65, y + 620, 130, 129, 164);
     }
 
     drawSubmarine(submarine_X, submarine_Y) {
-        fill(209, 4, 4);
+        fill(130, 129, 164);
         ellipse(submarine_X + 196, submarine_Y + 36, 105, 70);
         ellipse(submarine_X + 2, submarine_Y + 36, 105, 70);
-        fill(224, 3, 3);
+        fill(54, 53, 109);
         rect(submarine_X + 1, submarine_Y + 1, 200, 70);
 
-        fill(163, 0, 38);
+        fill(29, 28, 90);
         rect(submarine_X + 93, submarine_Y + -42, 40, 45);
-        fill(163, 0, 38);
+        fill(29, 28, 90);
         rect(submarine_X + 93, submarine_Y + 71, 40, 14);
 
         this.submarineGlass(submarine_X, submarine_Y);
@@ -79,16 +80,16 @@ class animation {
         background(255, 255, 255, 60);
         fill(237, 34, 93);
         strokeWeight(10);
-        rect(400, 150, 400, 150, 300);
+        rect(760, 310, 400, 150, 300);
         fill(255, 255, 255);
         textFont('Helvetica');
         textSize(40);
-        text(msg, 440, 210, 400, 150);
+        text(msg, 800, 360, 400, 150);
         strokeWeight(1);
     }
 
     animationPlay() {
-        background(0, 2, 105);
+        background(22, 27, 54);
         this.submarineX1 = this.submarineX1 - 1.5;
         this.submarineX2 = this.submarineX2 + 1.5;
         this.fishX1 = this.fishX1 + 2.5;
@@ -98,15 +99,15 @@ class animation {
         this.drawShipGroup(this.fishX2, this.fishY);
 
         if (this.submarineX1 < -100) {
-            this.submarineX1 = 1300;
+            this.submarineX1 = 2000;
         }
-        if (this.submarineX2 > 1300) {
-            this.submarineX2 = -200;
+        if (this.submarineX2 > 1900) {
+            this.submarineX2 = -100;
         }
-        if (this.fishX1 > 1300) {
+        if (this.fishX1 > 2000) {
             this.fishX1 = -300;
         }
-        if (this.fishX2 > 1300) {
+        if (this.fishX2 > 2000) {
             this.fishX2 = -300;
         }
 

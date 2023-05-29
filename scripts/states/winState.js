@@ -28,9 +28,8 @@ var winStateCall = function () {
     if (player1.win === true) {
         textSize(40);
         text(
-            "Player 1 VICTORY --- player 1 map !!! turns:- " + player1.turn,
-            400,
-            400,
+            "Player 1 VICTORY --- Player 1 win !!! turns: " + player1.turn,
+            800, 350,
             400,
             400
         );
@@ -193,9 +192,8 @@ var winStateCall = function () {
     } else if (player2.win === true) {
         textSize(40);
         text(
-            "Player 2 VICTORY --- player 2 map !!! turns :- " + player2.turn,
-            400,
-            400,
+            "Player 2 VICTORY --- Player 2 win !!! turns : " + player2.turn,
+            800, 350,
             400,
             400
         );
@@ -273,8 +271,11 @@ var winStateCall = function () {
         }
         player1.drawGridActual();
     } else {
+        fill(54, 53, 109, 250); 
+        rect(760, 330, 420, 130, 20);
+        fill(230, 230, 237);
         textSize(40);
-        text("BOT VICTORY --- bot win !!! turns:-" + bot.turn, 400, 400, 400, 400);
+        text("BOT VICTORY --- Bot win !!! turns: " + bot.turn, 800, 350, 400, 400);
 
         if (statTableUpdated === false) {
             statTable[statisticsEnum.row.botPlayer][statisticsEnum.col.matchesWon]++;
@@ -348,7 +349,7 @@ var winStateCall = function () {
         player1.drawGridActual();
     }
 
-    var backButton = new button("Menu", 150, 450);
+    var backButton = new button("     Menu", 800, 550);
     backButton.draw();
 
     if (backButton.insideButton()) {

@@ -1,10 +1,11 @@
 body {
-    background-color: rgb(0, 2, 105);
+    background-image: linear-gradient(#192946, #9aa8c4);
+    /*rgb(0, 2, 105);*/
 }
 
 .header {
     background-color: #9933cc;
-    color: #ffffff;
+    color: #ffe4f2;
     padding: 15px;
 }
 

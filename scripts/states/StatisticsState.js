@@ -1,41 +1,29 @@
 var statisticsState = function () {
 
-    // background(0, 255, 255,100);
-    var backButton = new button("back", 150, 480);
+    background(104, 104, 145, 40);
+    var backButton = new button("      Back", 870, 600);
     backButton.draw();
 
-    var statTableX = 200, statTableY = 230;
+    var statTableX = 570, statTableY = 260;
     var slotHeight = 40 * 1.5, slotWidth = 100 * 1.5;
 
-    strokeWeight(0);
-    fill(170, 120, 200, 300);
-    rect(statTableX / 4 + 180, statTableY / 4 - 7, slotWidth, slotHeight);
-    fill(0, 0, 0);
-    text("ONLINE", statTableX / 4 + 195, statTableY / 4 + 10, slotWidth, slotHeight);
 
-    fill(255, 105, 200, 200);
+    fill(53, 71, 95, 300);
 
-    rect(statTableX / 4 + 30, statTableY / 4 - 7, slotWidth, slotHeight);
 
-    strokeWeight(1);
 
-    fill(0, 0, 0);
-    text("OFFLINE", statTableX / 4 + 40, statTableY / 4 + 10, slotWidth, slotHeight);
-
-    fill(255, 105, 200, 200);
-
-    rect(statTableX - slotWidth, statTableY - slotHeight * 2, statTableX * 6, statTableY * 1.5, 30);
+    rect(statTableX - slotWidth, statTableY - slotHeight * 2, statTableX * 2 - 55, statTableY * 1.5 - 15, 30);
     strokeWeight(2);
 
-    fill(0, 0, 0);
+    fill(237, 237, 245);
 
     textSize(20);
-    text("WON", 30 + statTableX, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
-    text("LOST", 30 + statTableX + slotWidth, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
-    text("SHIPS DESTROYED", 30 + statTableX + slotWidth * 2, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
-    text("SHIPS LOST", 30 + statTableX + slotWidth * 3, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
-    text("AVG TURNS TO WIN", 30 + statTableX + slotWidth * 4, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
-    text("WIN %", 30 + statTableX + slotWidth * 5, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
+    text("WON", 20 + statTableX, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
+    text("LOST", 20 + statTableX + slotWidth, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
+    text("SHIPS DESTROYED", 10 + statTableX + slotWidth * 2, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
+    text("SHIPS LOST", 20 + statTableX + slotWidth * 3, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
+    text("AVG TURNS TO WIN", 20 + statTableX + slotWidth * 4, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
+    text("WIN %", 20 + statTableX + slotWidth * 5, 12.5 + statTableY + slotHeight * -1, slotWidth, slotHeight);
 
     text("PLAYER 1", 30 + statTableX - slotWidth, 12.5 + statTableY, slotWidth, slotHeight);
     text("PLAYER 2", 30 + statTableX - slotWidth, 12.5 + statTableY + slotHeight, slotWidth, slotHeight);
@@ -55,7 +43,7 @@ var statisticsState = function () {
             }
 
             if (highestValInCol) {
-                fill(0, 180, 0);
+                fill(155, 154, 182);
             } else {
                 fill(255, 0, 0);
             }

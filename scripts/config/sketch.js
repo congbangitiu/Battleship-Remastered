@@ -1,5 +1,6 @@
+// Khung bao game
 function setup() {
-    createCanvas(1300, 550);
+    createCanvas(1900, 840);
     frameRate(50);
 }
 

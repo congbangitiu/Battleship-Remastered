@@ -33,7 +33,7 @@ var playerClass = function (playerName, playerRole) {
     this.gridActual[8] = new Array(10);
     this.gridActual[9] = new Array(10);
 
-    this.currLife = [2, 3, 3, 4, 5];
+    this.currLife = [2,3,3,4,5];
     this.name = playerName;
     this.playerRole = playerRole;
 
@@ -78,36 +78,37 @@ playerClass.prototype.drawGridActual = function () {
     var i, j = 1, indent = 0;
 
     if (this.playerRole === 2)
-        indent = 700;
-
+        indent = 800;
+    // Ô thuyền phía trên ma trận
     for (i = 0; i < this.shipType.length; i++) {
         for (j = 0; j < this.shipType[i].size; j++) {
             noFill();
-            rect(indent + i * 85 + 40 + 20 * j, 40, 20, 25);
+            rect(indent + i * 85 + 360 + 20 * j, 140, 20, 25);
         }
         for (j = 0; j < this.currLife[i]; j++) {
             fill(this.shipType[i].color.r, this.shipType[i].color.g, this.shipType[i].color.b);
-            rect(indent + i * 85 + 40 + 20 * j, 40, 20, 25);
+            rect(indent + i * 85 + 360 + 20 * j, 140, 20, 25);
         }
     }
 
-    fill(64, 54, 255);
+    fill(155, 154, 182);
     for (i = 1; i <= 10; i++) {
         for (j = 1; j <= 10; j++) {
-
-            fill(64, 54, 255);
-            rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+            // Màu ô người chơi
+            fill(155, 154, 182);
+            // y = 50
+            rect(indent + 380 + 30 * i, 150 + 30 * j, 30, 30);
 
             // draws the ships on the map
             if (this.gridActual[i - 1][j - 1] > 0) {
 
                 fill(this.shipType[this.gridActual[i - 1][j - 1] - 1].color.r, this.shipType[this.gridActual[i - 1][j - 1] - 1].color.g, this.shipType[this.gridActual[i - 1][j - 1] - 1].color.b);
-                ellipse(indent + 65 + 30 * i, 65 + 30 * j, 25, 25);
+                ellipse(indent + 395 + 30 * i, 165 + 30 * j, 25, 25);
             }
 
             if (this.gridActual[i - 1][j - 1] === ISLAND) {   // In another files we can put it after finish
                 fill(255, 212, 128);
-                rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+                rect(indent + 380 + 30 * i, 150 + 30 * j, 30, 30);
             }
         }
     }
@@ -117,56 +118,58 @@ playerClass.prototype.drawGridActual = function () {
 playerClass.prototype.drawGridHidden = function () {
     var i, j = 1, indent = 0;
 
+    // Màu chữ player
     fill(255, 255, 255);
     textSize(30);
 
     if (this.playerRole === 2) {
-        indent = 700;
-        text("Player 2", 160 + indent, 400, 200, 50);
+        indent = 800;
+        text("Player 2", 500 + indent, 550, 200, 50);
     } else {
-        text("Player 1", 160 + indent, 400, 200, 50);
+        text("Player 1", 500 + indent, 550, 200, 50);
     }
 
     textSize(20);
-    text("turn : " + this.turn, 90 + indent, 10, 100, 20);
+    text("turn : " + this.turn, 420 + indent, 100, 100, 20);
 
+    // Ô thuyền bên trên lúc chơi
     for (i = 0; i < this.shipType.length; i++) {
         for (j = 0; j < this.shipType[i].size; j++) {
             noFill();
             if (this.currLife[i] > 0 && j < this.shipType[i].size) {
                 fill(this.shipType[i].color.r, this.shipType[i].color.g, this.shipType[i].color.b);
             }
-            rect(indent + i * 85 + 40 + 20 * j, 40, 20, 25);
+            rect(indent + i * 85 + 360 + 20 * j, 140, 20, 25);
         }
     }
 
 
-    fill(64, 54, 255);
+    fill(155, 154, 182);
     for (i = 1; i <= 10; i++) {
         for (j = 1; j <= 10; j++) {
             // block not yet hit
             //   if(this.gridHidden[i-1][j-1] === 0){
-            fill(64, 54, 255);
+            fill(155, 154, 182);
             if (densityLens === false || this.playerRole !== 2) {
                 if (this.gridHidden[i - 1][j - 1] === ISLAND) {
                     //sandy beach colour
                     fill(255, 212, 128);
                 }
-                rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
-            }
+                rect(indent + 380 + 30 * i, 150 + 30 * j, 30, 30);
+            } 
 
             // target hit inside the block
             if (this.gridHidden[i - 1][j - 1] > 0) {
                 // red color
                 fill(255, 56, 63);
-                ellipse(indent + 65 + 30 * i, 65 + 30 * j, 20, 20);
-            }
+                ellipse(indent + 395 + 30 * i, 165 + 30 * j, 20, 20);
+            } 
 
             // missed inside block
             else if (this.gridHidden[i - 1][j - 1] === -1) {
                 // yellow color
                 fill(255, 255, 0);
-                ellipse(indent + 65 + 30 * i, 65 + 30 * j, 20, 20);
+                ellipse(indent + 395 + 30 * i, 165 + 30 * j, 20, 20);
             }
         }
     }
@@ -311,16 +314,16 @@ playerClass.prototype.play = function (playerRole) {
     if (this.turn < 100) {
         // check for win condition in each turn
         if (playerRole === 2) {
-            indent = 700;
+            indent = 800;
         }
-
+ 
         // ensure player is not able to hit the same grid again
         for (i = 1; i <= 10; i++) {
             for (j = 1; j <= 10; j++) {
-                if (mouseX > indent + 50 + 30 * i && mouseX < indent + 50 + 30 * (i + 1) && mouseY > 50 + 30 * j && mouseY < 50 + 30 * (j + 1)) {
+                if (mouseX > indent + 380 + 30 * i && mouseX < indent + 380 + 30 * (i + 1) && mouseY > 150 + 30 * j && mouseY < 150 + 30 * (j + 1)) {
                     if (!mouseIsPressed) {
                         fill(140, 184, 250, 200);
-                        rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+                        rect(indent + 380 + 30 * i, 150 + 30 * j, 30, 30);
                     }
                     if (mouseIsPressed) {
                         if ((this.gridActual[i - 1][j - 1] === 0) && (this.gridHidden[i - 1][j - 1] === 0)) {

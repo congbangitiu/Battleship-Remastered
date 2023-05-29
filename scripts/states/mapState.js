@@ -68,15 +68,15 @@ var generateIslands = function (islandsCount) {
 };
 
 var drawGeneratedMap = function (randomMap) {
-    var indent = 340;
+    var indent = 770;
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
-            fill(64, 54, 255);
+            fill(237, 237, 245);
             if (randomMap[i][j] !== ISLAND) {
-                rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+                rect(indent + 50 + 30 * i, 100 + 30 * j, 30, 30);
             } else {
                 fill(255, 212, 128);
-                rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+                rect(indent + 50 + 30 * i, 100 + 30 * j, 30, 30);
             }
         }
     }
@@ -86,17 +86,17 @@ var islandsCount = 0;
 
 var newMapState = function () {
 
-    var backButton = new button("back", 260, 450);
-    var newMapButton = new button("new map", 450, 450);
-    var startButton = new button("start", 650, 450);
+    var backButton = new button("      Back", 590, 550);
+    var newMapButton = new button("   New map", 870, 550);
+    var startButton = new button("     Start", 1150, 550);
 
-    var islandX = 600, islandY = 385;
-    var islandsCountButton = new button("    " + islandsCount, islandX, islandY, 120, 40);
-    var leftArrow = new button("<", islandX + 5, islandY + 5, 30, 30);
-    var rightArrow = new button(">", islandX + 120 - 35, islandY + 5, 30, 30);
+    var islandX = 1000, islandY = 450;
+    var islandsCountButton = new button("      " + islandsCount, islandX, islandY, 120, 40);
+    var leftArrow = new button(" <", islandX , islandY + 5, 30, 30);
+    var rightArrow = new button(" >", islandX + 120 - 35, islandY + 5, 30, 30);
 
     fill(255, 255, 255);
-    text("Island Blocks:", islandX - 200, islandY + 7, 200, 40);
+    text("Island Blocks:", islandX - 200, islandY + 15, 200, 40);
 
     backButton.draw();
     startButton.draw();
