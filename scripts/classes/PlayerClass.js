@@ -1,4 +1,4 @@
-var playerClass = function(playerName, playerRole) {
+var playerClass = function (playerName, playerRole) {
     // Inherits objects from Network Class
     networkClass.call(this);
 
@@ -33,7 +33,7 @@ var playerClass = function(playerName, playerRole) {
     this.gridActual[8] = new Array(10);
     this.gridActual[9] = new Array(10);
 
-    this.currLife = [2, 3, 3, 4, 5];
+    this.currLife = [2,3,3,4,5];
     this.name = playerName;
     this.playerRole = playerRole;
 
@@ -74,100 +74,102 @@ var playerClass = function(playerName, playerRole) {
 
 // Inherit methods from PlayerClass to playerClass
 // Used in a graphical user interface to display the current state of a game board or grid
-playerClass.prototype.drawGridActual = function() {
-    var i = 1, j = 1, indent = 0;
+playerClass.prototype.drawGridActual = function () {
+    var i, j = 1, indent = 0;
 
     if (this.playerRole === 2)
-        indent = 700;
-
+        indent = 800;
+    // Ô thuyền phía trên ma trận
     for (i = 0; i < this.shipType.length; i++) {
         for (j = 0; j < this.shipType[i].size; j++) {
             noFill();
-            rect(indent + i * 85 + 40 + 20 * j, 40, 20, 25);
+            rect(indent + i * 85 + 360 + 20 * j, 140, 20, 25);
         }
         for (j = 0; j < this.currLife[i]; j++) {
             fill(this.shipType[i].color.r, this.shipType[i].color.g, this.shipType[i].color.b);
-            rect(indent + i * 85 + 40 + 20 * j, 40, 20, 25);
+            rect(indent + i * 85 + 360 + 20 * j, 140, 20, 25);
         }
     }
 
-    fill(64, 54, 255);
+    fill(155, 154, 182);
     for (i = 1; i <= 10; i++) {
         for (j = 1; j <= 10; j++) {
-
-            fill(64, 54, 255);
-            rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+            // Màu ô người chơi
+            fill(155, 154, 182);
+            // y = 50
+            rect(indent + 380 + 30 * i, 150 + 30 * j, 30, 30);
 
             // draws the ships on the map
             if (this.gridActual[i - 1][j - 1] > 0) {
 
                 fill(this.shipType[this.gridActual[i - 1][j - 1] - 1].color.r, this.shipType[this.gridActual[i - 1][j - 1] - 1].color.g, this.shipType[this.gridActual[i - 1][j - 1] - 1].color.b);
-                ellipse(indent + 65 + 30 * i, 65 + 30 * j, 25, 25);
+                ellipse(indent + 395 + 30 * i, 165 + 30 * j, 25, 25);
             }
 
-            if(this.gridActual[i - 1][j - 1] === ISLAND){   // In another files we can put it after finish
+            if (this.gridActual[i - 1][j - 1] === ISLAND) {   // In another files we can put it after finish
                 fill(255, 212, 128);
-                rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+                rect(indent + 380 + 30 * i, 150 + 30 * j, 30, 30);
             }
         }
     }
 };
 
 // Used in a graphical user interface to display the current state of a game board or grid
-playerClass.prototype.drawGridHidden = function()  {
-    var i = 1, j = 1, indent = 0;
+playerClass.prototype.drawGridHidden = function () {
+    var i, j = 1, indent = 0;
 
+    // Màu chữ player
     fill(255, 255, 255);
     textSize(30);
 
     if (this.playerRole === 2) {
-        indent = 700;
-        text("Player 2", 160 + indent, 400, 200, 50);
-    }
-    else {
-        text("Player 1", 160 + indent, 400, 200, 50);
+        indent = 800;
+        text("Player 2", 500 + indent, 550, 200, 50);
+    } else {
+        text("Player 1", 500 + indent, 550, 200, 50);
     }
 
     textSize(20);
-    text("turn : " + this.turn, 90 + indent, 10, 100, 20);
+    text("turn : " + this.turn, 420 + indent, 100, 100, 20);
 
+    // Ô thuyền bên trên lúc chơi
     for (i = 0; i < this.shipType.length; i++) {
         for (j = 0; j < this.shipType[i].size; j++) {
             noFill();
-            if(this.currLife[i] > 0 && j < this.shipType[i].size){
-                fill(this.shipType[i].color.r, this.shipType[i].color.g, this.shipType[i].color.b);  
+            if (this.currLife[i] > 0 && j < this.shipType[i].size) {
+                fill(this.shipType[i].color.r, this.shipType[i].color.g, this.shipType[i].color.b);
             }
-            rect(indent + i * 85 + 40 + 20 * j, 40, 20, 25);
+            rect(indent + i * 85 + 360 + 20 * j, 140, 20, 25);
         }
     }
 
 
-    fill(64, 54, 255);
+    fill(155, 154, 182);
     for (i = 1; i <= 10; i++) {
         for (j = 1; j <= 10; j++) {
             // block not yet hit
             //   if(this.gridHidden[i-1][j-1] === 0){
-            fill(64, 54, 255);
-            if(densityLens === false || this.playerRole !== 2){
-                if(this.gridHidden[i - 1][j - 1] === ISLAND){
+            fill(155, 154, 182);
+            if (densityLens === false || this.playerRole !== 2) {
+                if (this.gridHidden[i - 1][j - 1] === ISLAND) {
                     //sandy beach colour
                     fill(255, 212, 128);
                 }
-                rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
-            }
+                rect(indent + 380 + 30 * i, 150 + 30 * j, 30, 30);
+            } 
 
             // target hit inside the block
             if (this.gridHidden[i - 1][j - 1] > 0) {
                 // red color
                 fill(255, 56, 63);
-                ellipse(indent + 65 + 30 * i, 65 + 30 * j, 20, 20);
-            }
+                ellipse(indent + 395 + 30 * i, 165 + 30 * j, 20, 20);
+            } 
 
             // missed inside block
             else if (this.gridHidden[i - 1][j - 1] === -1) {
                 // yellow color
                 fill(255, 255, 0);
-                ellipse(indent + 65 + 30 * i, 65 + 30 * j, 20, 20);
+                ellipse(indent + 395 + 30 * i, 165 + 30 * j, 20, 20);
             }
         }
     }
@@ -175,7 +177,7 @@ playerClass.prototype.drawGridHidden = function()  {
 };
 
 // Used to place a ship on a game board or grid
-playerClass.prototype.arrangeShip = function() {
+playerClass.prototype.arrangeShip = function () {
     // solve random function ceiling
     var size;
     var a, b, i, num, shipOverlapped = false;
@@ -217,8 +219,7 @@ playerClass.prototype.arrangeShip = function() {
                 }
                 shipOverlapped = false;
             }
-        }
-        else {
+        } else {
             while (1) {
                 b = floor(random(0, 10));
                 a = floor(random(0, 11 - num));
@@ -252,8 +253,8 @@ playerClass.prototype.arrangeShip = function() {
 
 // Used to set up the initial state of a game board or grid
 playerClass.prototype.initializeGrid = function () {
-    for(var i = 0; i < 10; i++){
-        for(var j = 0; j < 10; j++){
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
             this.gridHidden[i][j] = randomMap[i][j];
             this.gridActual[i][j] = randomMap[i][j];
         }
@@ -268,28 +269,28 @@ playerClass.prototype.initializeGrid = function () {
     this.ship = [
         // Spacecraft 1
         {
-            begin: { x: 0, y : 0 },
-            end: { x: 0, y : 0 }
+            begin: {x: 0, y: 0},
+            end: {x: 0, y: 0}
         },
         // Spacecraft 2
         {
-            begin: { x: 0, y : 0 },
-            end: { x: 0, y : 0 }
+            begin: {x: 0, y: 0},
+            end: {x: 0, y: 0}
         },
         // Spacecraft 3
         {
-            begin: { x: 0, y : 0 },
-            end: { x: 0, y : 0 }
+            begin: {x: 0, y: 0},
+            end: {x: 0, y: 0}
         },
         // Spacecraft 4
         {
-            begin: { x: 0, y : 0 },
-            end: { x: 0, y : 0 }
+            begin: {x: 0, y: 0},
+            end: {x: 0, y: 0}
         },
         // Spacecraft 5
         {
-            begin: { x: 0, y : 0 },
-            end: { x: 0, y : 0 }
+            begin: {x: 0, y: 0},
+            end: {x: 0, y: 0}
         }
     ];
 
@@ -298,12 +299,12 @@ playerClass.prototype.initializeGrid = function () {
 };
 
 // Used to determine whether a ship on the game board or grid has been hit and sunk, or whether it is still floating
-playerClass.prototype.checkShipLifeStatus = function()  {
+playerClass.prototype.checkShipLifeStatus = function () {
     return (this.currLife[0] + this.currLife[1] + this.currLife[2] + this.currLife[3] + this.currLife[4]) === 0;
 };
 
 //Used to implement the main game loop for a turn-based game
-playerClass.prototype.play = function(playerRole)  {
+playerClass.prototype.play = function (playerRole) {
     var indent = 0, i = 1, j = 1;
     // if all opponents ships have sunk declare victory
     if (this.checkShipLifeStatus() === true) {
@@ -313,16 +314,16 @@ playerClass.prototype.play = function(playerRole)  {
     if (this.turn < 100) {
         // check for win condition in each turn
         if (playerRole === 2) {
-            indent = 700;
+            indent = 800;
         }
-
+ 
         // ensure player is not able to hit the same grid again
         for (i = 1; i <= 10; i++) {
             for (j = 1; j <= 10; j++) {
-                if (mouseX > indent + 50 + 30 * i && mouseX < indent + 50 + 30 * (i + 1) && mouseY > 50 + 30 * j && mouseY < 50 + 30 * (j + 1)) {
+                if (mouseX > indent + 380 + 30 * i && mouseX < indent + 380 + 30 * (i + 1) && mouseY > 150 + 30 * j && mouseY < 150 + 30 * (j + 1)) {
                     if (!mouseIsPressed) {
                         fill(140, 184, 250, 200);
-                        rect(indent + 50 + 30 * i, 50 + 30 * j, 30, 30);
+                        rect(indent + 380 + 30 * i, 150 + 30 * j, 30, 30);
                     }
                     if (mouseIsPressed) {
                         if ((this.gridActual[i - 1][j - 1] === 0) && (this.gridHidden[i - 1][j - 1] === 0)) {
@@ -334,16 +335,14 @@ playerClass.prototype.play = function(playerRole)  {
 
                             //send your hit coordinates info to the server
                             // send player2.hitX and player2.hitY
-                                playerSwitching = true;
-                                if (this.checkShipLifeStatus() === true) {
-                                    return true;
-                                }  
+                            playerSwitching = true;
+                            if (this.checkShipLifeStatus() === true) {
+                                return true;
+                            }
 
                             // returns when shot misses
                             return 0;
-                        }
-
-                        else if ((this.gridActual[i - 1][j - 1] > 0) && (this.gridHidden[i - 1][j - 1] === 0)) {
+                        } else if ((this.gridActual[i - 1][j - 1] > 0) && (this.gridHidden[i - 1][j - 1] === 0)) {
 
                             // subtract ships life which is hit 
                             // mark as hit on hidden grid

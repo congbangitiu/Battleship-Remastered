@@ -1,24 +1,25 @@
+// Khung bao game
 function setup() {
-    createCanvas(1300, 550);
+    createCanvas(1900, 840);
     frameRate(50);
 }
 
 var mouseIsPressed = false;
 
-var mouseReleased = function() {
+var mouseReleased = function () {
     mouseIsPressed = false;
 };
 
-var mousePressed = function() {
+var mousePressed = function () {
     mouseIsPressed = true;
 };
 
-var touchStarted = function() {
+var touchStarted = function () {
     mouseIsPressed = true;
 };
 
 //Global variables
- 
+
 var menu = true;
 var instructions = false;
 var multiPlayerOffline = false;
@@ -38,7 +39,7 @@ var randomMap = new Array(10);
 for (var i = 0; i < randomMap.length; i++)
     randomMap[i] = new Array(10);
 
-var initializeRandomMap = function()  {
+var initializeRandomMap = function () {
     for (var i = 0; i < 10; i++) {
         for (var j = 0; j < 10; j++) {
             randomMap[i][j] = 0;
