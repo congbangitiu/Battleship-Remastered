@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2023 JOSEPH TEAM
+Copyright (c) 2023 Nhat Huy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

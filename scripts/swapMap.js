@@ -7,7 +7,7 @@ var bot = new botClass();
  * Re-initialize instances of Multiplayer object
  */
 
-var createNewMultiPlayerObject = function () {
+var createNewMultiPlayerObject = function() {
     player1 = new playerClass("player-1", 1);
     player1.initializeGrid();
 
@@ -19,7 +19,7 @@ var createNewMultiPlayerObject = function () {
  * Re-initialize instances of single player object
  */
 
-var createNewSinglePlayerObject = function () {
+var createNewSinglePlayerObject = function() {
     player1 = new playerClass("player-1", 1);
     player1.initializeGrid();
 
@@ -36,7 +36,7 @@ var createNewSinglePlayerObject = function () {
  * @Param {String} gameType  gameType = "singlePlayer" or "multiPlayer"
  */
 
-var swapMap = function (gameType) {
+var swapMap = function(gameType) {
     let temp = new Array(10);
     for (let i = 0; i < 10; i++) {
         temp[i] = new Array(10);
@@ -48,21 +48,23 @@ var swapMap = function (gameType) {
         }
     }
 
-    for (let i = 0; i < 10; i++) {
+    for (let  i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
             if (gameType === "single-player") {
                 player1.gridActual[i][j] = bot.gridActual[i][j];
-            } else {
+            }
+            else {
                 player1.gridActual[i][j] = player2.gridActual[i][j];
             }
         }
     }
-
+    
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
             if (gameType === "single-player") {
                 bot.gridActual[i][j] = temp[i][j];
-            } else {
+            }
+            else {
                 player2.gridActual[i][j] = temp[i][j];
             }
         }

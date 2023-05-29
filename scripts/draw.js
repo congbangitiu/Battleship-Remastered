@@ -1,13 +1,20 @@
-var player1AutoButton = new button("      Auto", 350, 520);
-var player2AutoButton = new button("      Auto", 1150, 520);
-var player1ConfirmButton = new button("    Confirm", 580, 520);
-var player2ConfirmButton = new button("    Confirm", 1380, 520);
+var player1AutoButton = new button("auto", 50, 400);
+var player2AutoButton = new button("auto", 550, 400);
+var player1ConfirmButton = new button("confirm", 250, 400);
+var player2ConfirmButton = new button("confirm", 750, 400);
 
 var posX = 400, posY = 70;
+<<<<<<< HEAD
+var singlePlayerButton = new button("single-player", posX + 100, posY + 40);
+var multiPlayerButton = new button("multi-player", posX + 100, posY + 90);
+var instructionButton = new button("Instructions", posX + 100, posY + 190);
+var statisticsButton = new button("statistics", posX + 100, posY + 290);
+=======
 var singlePlayerButton = new button("Singleplayer", posX + 475, posY + 150);
 var multiPlayerButton = new button(" Multiplayer", posX + 475, posY + 230);
 var instructionButton = new button(" Instructions", posX + 475, posY + 310);
-var statisticsButton = new button("   Statistics", posX + 475, posY + 390);
+var statisticsButton = new button("  Statistics", posX + 475, posY + 390);
+>>>>>>> parent of bafa90f (Fix components' position)
 
 var animate = new animation();
 
@@ -16,7 +23,7 @@ var animate = new animation();
  * It invokes different gameStates based on values
  */
 
-var draw = function () {
+var draw = function() {
     animate.animationPlay();
 
     if (densityLens) {
@@ -24,17 +31,23 @@ var draw = function () {
     }
     if (menu === true) {
         menuState();
-    } else if (makeNewMap === true) {
+    }
+    else if (makeNewMap === true) {
         newMapState();
-    } else if (singlePlayer === true) {
+    }
+    else if (singlePlayer === true) {
         singlePlayerState();
-    } else if (instructions === true) {
+    }
+    else if (instructions === true) {
         instructionState();
-    } else if (multiPlayerOffline === true) {
+    }
+    else if (multiPlayerOffline === true) {
         multiPlayerOfflineState();
-    } else if (statistics === true) {
+    }
+    else if (statistics === true) {
         statisticsState();
-    } else if (winState === true) {
+    }
+    else if (winState === true) {
         winStateCall();
     }
 };

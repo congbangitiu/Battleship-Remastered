@@ -96,7 +96,7 @@ var newMapState = function () {
 
     var backButton = new button("      Back", 590, 550);
     var newMapButton = new button("   New map", 870, 550);
-    var startButton = new button("      Start", 1150, 550);
+    var startButton = new button("     Start", 1150, 550);
 
     var islandX = 1000, islandY = 450;
     var islandsCountButton = new button("      " + islandsCount, islandX, islandY, 120, 40);
