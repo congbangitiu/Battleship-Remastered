@@ -1,13 +1,13 @@
-var player1AutoButton = new button("auto", 50, 400);
-var player2AutoButton = new button("auto", 550, 400);
-var player1ConfirmButton = new button("confirm", 250, 400);
-var player2ConfirmButton = new button("confirm", 750, 400);
+var player1AutoButton = new button("      Auto", 350, 520);
+var player2AutoButton = new button("      Auto", 1150, 520);
+var player1ConfirmButton = new button("    Confirm", 580, 520);
+var player2ConfirmButton = new button("    Confirm", 1380, 520);
 
 var posX = 400, posY = 70;
-var singlePlayerButton = new button("Singleplayer", posX + 150, posY + 40);
-var multiPlayerButton = new button("Multiplayer", posX + 150, posY + 120);
-var instructionButton = new button("Instructions", posX + 150, posY + 200);
-var statisticsButton = new button("Statistics", posX + 150, posY + 280);
+var singlePlayerButton = new button("Singleplayer", posX + 475, posY + 150);
+var multiPlayerButton = new button(" Multiplayer", posX + 475, posY + 230);
+var instructionButton = new button(" Instructions", posX + 475, posY + 310);
+var statisticsButton = new button("  Statistics", posX + 475, posY + 390);
 
 var animate = new animation();
 

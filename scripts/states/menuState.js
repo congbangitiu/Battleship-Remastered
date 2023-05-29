@@ -1,8 +1,8 @@
 //draw function
 var menuState = function () {
     //rectangle to go around the buttons
-    fill(255, 100, 0, 220);
-    rect(posX + 70, posY + 15, 350, 370, 60);
+    fill(130, 129, 164, 220);
+    rect(posX + 400, posY + 120, 350, 370, 60);
     fill(255, 255, 255);
     textSize(65);
 

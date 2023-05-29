@@ -8,9 +8,9 @@ var button = function (str, x, y, w = 170, h = 40) {
 
 // drawing the button on the canvas
 button.prototype.draw = function () {
-    fill(0, 210, 0, 200);
+    fill(54, 53, 109, 200);
     rect(this.x, this.y, this.width + 20, this.height + 20, 10);
-    fill(0, 0, 0);
+    fill(230, 230, 237);
     textSize(30);
     text(this.txt, this.x + 11, this.y + 40);
 };
@@ -26,6 +26,6 @@ button.prototype.insideButton = function () {
 
 //change the button's color when the mouse pointer is over the button
 button.prototype.lightUpButton = function () {
-    fill(240, 218, 240, 100);
+    fill(240, 218, 240, 50);
     rect(this.x, this.y, this.width + 20, this.height + 20, 10);
 };
