@@ -1,7 +1,13 @@
 var singlePlayerState = function () {
+<<<<<<< HEAD
     var backButton1 = new button("Back", 350, 450);
     var DensityLensButtonOn = new button("DensityLensON", 550, 450, 230);
     var DensityLensButtonOff = new button("DensityLensOFF", 810, 450, 240);
+=======
+    var backButton1 = new button("    Back", 580, 650);
+    var DensityLensButtonOn = new button(" DensityLensON", 830, 650, 230);
+    var DensityLensButtonOff = new button(" DensityLensOFF", 1140, 650, 240);
+>>>>>>> parent of bafa90f (Fix components' position)
 
     backButton1.draw();
 
