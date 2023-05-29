@@ -1,4 +1,4 @@
-var botClass = function () {
+var botClass = function() {
     // Create constructor Bot Class
     playerClass.call(this, "p2", 2);
 
@@ -19,25 +19,26 @@ var botClass = function () {
 // Inherit all methods from Player Class
 botClass.prototype = Object.create(playerClass.prototype);
 
-botClass.prototype.countShipStatus = function () {
+botClass.prototype.countShipStatus = function(str) {
     var numberOfShipsDestroyed = 0;
     for (var i = 0; i < 5; i++)
-        if (bot.currLife[i] === 0)
+        if(bot.currLife[i] === 0)
             numberOfShipsDestroyed++;
 
     return numberOfShipsDestroyed;
 }
 
-botClass.prototype.drawProbabilityDensityGrid = function () {
-    var i, j = 1;
+botClass.prototype.drawProbabilityDensityGrid = function() {
+    var i = 1, j = 1;
     var indent = 200;
 
     for (i = 0; i < 10; i++) {
         for (j = 0; j < 10; j++) {
-            if (this.grid[i][j] > 2) {
+            if (this.grid && this.grid[i] && this.grid[i][j] > 2) {
                 fill(this.grid[i][j] * 50, 0, 0);
                 rect(indent + 550 + 30 * (i + 1), 50 + 30 * (j + 1), 30, 30);
-            } else if (this.grid[i][j] === 2) {
+            }
+            else if (this.grid && this.grid[i] && this.grid[i][j] === 2) {
                 fill(0, 0, 0);
                 rect(indent + 550 + 30 * (i + 1), 50 + 30 * (j + 1), 30, 30);
             }
@@ -46,7 +47,7 @@ botClass.prototype.drawProbabilityDensityGrid = function () {
     return 0;
 }
 
-botClass.prototype.find = function (x, y, horiz) {
+botClass.prototype.find = function(x, y, horiz) {
     var i, set = 0;
 
     if (horiz) {
@@ -56,7 +57,8 @@ botClass.prototype.find = function (x, y, horiz) {
             if (this.target_locked_y[i] >= y && (this.target_locked_y[i] <= y + this.curr_big_ship))
                 set++;
         }
-    } else {
+    }
+    else {
         for (i = 0; i < this.target_locked_x.length; i++) {
             if (this.target_locked_y[i] !== y)
                 return 0;
@@ -70,9 +72,9 @@ botClass.prototype.find = function (x, y, horiz) {
     }
 
     return 0;
-};
+}
 
-botClass.prototype.gridFilter = function (i, j, horiz, currShip) {
+botClass.prototype.gridFilter = function(i, j, horiz, currShip) {
     var k;
 
     if (horiz) {
@@ -80,14 +82,16 @@ botClass.prototype.gridFilter = function (i, j, horiz, currShip) {
             if (this.grid[i][j + k] <= 0) {
                 return 0;
             }
+
             if (!this.chainFire) {
                 if (this.grid[i][j + k] === 1) {
                     return 0;
                 }
             }
         }
-    } else {
-        for (k = 0; k < currShip; k++) {
+    }
+    else {
+        for (k = 0; k < currShip; k++){
             if (this.grid[i + k][j] <= 0)
                 return 0;
             if (!this.chainFire) {
@@ -100,35 +104,35 @@ botClass.prototype.gridFilter = function (i, j, horiz, currShip) {
     return 1;
 }
 
-botClass.prototype.largestAliveShip = function () {
-    var i;
+botClass.prototype.largestAliveShip = function() {
+    var i = 0;
 
     // Find the current biggest alive ship of component
     for (i = 4; i >= 0; i--) {
         if (this.currLife[i] !== 0) {
-            switch (i) {
-                case 0:
-                    i = 2;
-                    break;
-                case 1:
-                    i = 3;
-                    break;
-                case 2:
-                    i = 3;
-                    break;
-                case 3:
-                    i = 4;
-                    break;
-                case 4:
-                    i = 5;
-                    break;
-            }
-            return i;
+             switch (i) {
+                 case 0:
+                     i = 2;
+                     break;
+                 case 1:
+                     i = 3;
+                     break;
+                 case 2:
+                     i = 3;
+                     break;
+                 case 3:
+                     i = 4;
+                     break;
+                 case 4:
+                     i = 5;
+                     break;
+             }
+             return i;
         }
     }
-};
+}
 
-botClass.prototype.smallestAliveShip = function () {
+botClass.prototype.smallestAliveShip = function() {
     var i;
 
     // Find the current smallest ship
@@ -157,7 +161,7 @@ botClass.prototype.smallestAliveShip = function () {
     return 0;
 }
 
-botClass.prototype.initialize = function () {
+botClass.prototype.initialize = function() {
     for (var i = 0; i < 10; i++)
         this.grid[i] = new Array(10);
 
@@ -178,13 +182,13 @@ botClass.prototype.initialize = function () {
     }
 }
 
-botClass.prototype.calcProbabilityDensity = function () {
+botClass.prototype.calcProbabilityDensity = function() {
     var i, j, k;
 
     this.initialize();
 
     // Determine the biggest alive ship
-    // When chainFire is enabled, we will reduce filter to the smallest ship
+    // When chainFire is enabled, we will reduce filter to smallest ship
     if (this.chainFire) {
         this.curr_big_ship = this.smallestAliveShip() + this.smallSize;
     }
@@ -194,19 +198,21 @@ botClass.prototype.calcProbabilityDensity = function () {
     }
 
     for (i = 0; i < 10; i++) {
-        for (j = 0; j <= 10 - this.curr_big_ship; j++) {
+        for (j = 0; j , 10 - this.curr_big_ship; i++) {
             // Enable probability filter when chainFire is active
             if (this.chainFire && !(this.gridFilter(i, j, 1, this.curr_big_ship) && this.find(i, j, 1))) {
                 continue;
-            } else if (!this.gridFilter(i, j, 1, this.curr_big_ship)) {
+            }
+            else if (!this.gridFilter(i, j, 1, this.curr_big_ship)) {
                 continue;
             }
 
-            for (k = 0; k < this.curr_big_ship; k++) {
+            for ( k =0; k < this.curr_big_ship; k++) {
                 if (this.grid[i][j + k] > 1) {
                     if (this.chainFire) {
                         this.grid[i][j + k] = this.grid[i][j + k] + 100;
-                    } else {
+                    }
+                    else {
                         this.grid[i][j + k]++;
                     }
                 }
@@ -219,14 +225,16 @@ botClass.prototype.calcProbabilityDensity = function () {
         for (j = 0; j < 10; j++) {
             if (this.chainFire && !(this.gridFilter(i, j, 0, this.curr_big_ship) && this.find(i, j, 0))) {
                 continue;
-            } else if (!this.gridFilter(i, j, 0, this.curr_big_ship)) {
+            }
+            else if (!this.gridFilter(i, j, 0, this.curr_big_ship)) {
                 continue;
             }
 
             for (k = 0; k < this.curr_big_ship; k++) {
                 if (this.grid[i + k][j] > 1) {
                     this.grid[i + k][j] = this.grid[i + k][j] + 100;
-                } else {
+                }
+                else {
                     ++this.grid[i + k][j];
                 }
             }
@@ -235,7 +243,7 @@ botClass.prototype.calcProbabilityDensity = function () {
     return 0;
 }
 
-botClass.prototype.maxProbability = function () {
+botClass.prototype.maxProbability = function() {
     var i, j, max = 0;
 
     for (i = 0; i < 10; i++) {
@@ -248,7 +256,7 @@ botClass.prototype.maxProbability = function () {
     return max;
 }
 
-botClass.prototype.play = function () {
+botClass.prototype.play = function() {
     var botHitX = 0, botHitY = 0;
 
     if (this.checkShipLifeStatus()) {
@@ -317,7 +325,8 @@ botClass.prototype.play = function () {
             if (this.hitShipType !== this.gridActual[botHitX][botHitY]) {
                 this.missed_target_x.push(botHitX);
                 this.missed_target_y.push(botHitY);
-            } else if (this.currLife[this.gridActual[botHitX][botHitY] - 1] > 0) {
+            }
+            else if (this.currLife[this.gridActual[botHitX][botHitY] - 1] > 0) {
                 this.target_locked_x.push(botHitX);
                 this.target_locked_y.push(botHitY);
 
