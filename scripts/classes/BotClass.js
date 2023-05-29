@@ -30,8 +30,6 @@ botClass.prototype.countShipStatus = function () {
     return numberOfShipsDestroyed;
 }
 
-// Drawing a probability density grid
-// It appears to be using the p5.js library for rendering graphics.
 botClass.prototype.drawProbabilityDensityGrid = function () {
     var i, j = 1;
     var indent = 200;
@@ -50,7 +48,6 @@ botClass.prototype.drawProbabilityDensityGrid = function () {
     return 0;
 }
 
-// This function is used to find a specific pattern or arrangement of locked targets in a game.
 botClass.prototype.find = function (x, y, horiz) {
     var i, set = 0;
 
@@ -77,7 +74,6 @@ botClass.prototype.find = function (x, y, horiz) {
     return 0;
 };
 
-// Filters the grid based on certain conditions.
 botClass.prototype.gridFilter = function (i, j, horiz, currShip) {
     var k;
 
@@ -106,10 +102,10 @@ botClass.prototype.gridFilter = function (i, j, horiz, currShip) {
     return 1;
 }
 
-// Finds the current biggest alive ship component.
 botClass.prototype.largestAliveShip = function () {
     var i;
 
+    // Find the current biggest alive ship of component
     for (i = 4; i >= 0; i--) {
         if (this.currLife[i] !== 0) {
             switch (i) {
@@ -134,10 +130,10 @@ botClass.prototype.largestAliveShip = function () {
     }
 };
 
-// Finds the current smallest ship.
 botClass.prototype.smallestAliveShip = function () {
     var i;
 
+    // Find the current smallest ship
     for (i = 0; i < 5; i++) {
         if (this.currLife[i] !== 0) {
             switch (i) {
@@ -163,7 +159,6 @@ botClass.prototype.smallestAliveShip = function () {
     return 0;
 }
 
-// Initializes the grid and other arrays
 botClass.prototype.initialize = function () {
     for (var i = 0; i < 10; i++)
         this.grid[i] = new Array(10);
@@ -185,7 +180,6 @@ botClass.prototype.initialize = function () {
     }
 }
 
-// Calculates the probability density grid based on the current game state
 botClass.prototype.calcProbabilityDensity = function () {
     var i, j, k;
 
@@ -243,7 +237,6 @@ botClass.prototype.calcProbabilityDensity = function () {
     return 0;
 }
 
-// Finds the maximum probability value in the grid
 botClass.prototype.maxProbability = function () {
     var i, j, max = 0;
 
@@ -257,8 +250,6 @@ botClass.prototype.maxProbability = function () {
     return max;
 }
 
-// Determines the next move for the bot player based on the calculated probability
-// density grid and other game conditions
 botClass.prototype.play = function () {
     var botHitX = 0, botHitY = 0;
 

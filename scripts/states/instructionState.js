@@ -1,16 +1,16 @@
 var instructionState = function () {
-    textSize(50);
+    textSize(35);
     fill(255, 255, 255);
-    text("Instructions", 850, 150);
-    fill(54, 53, 109, 250);
-    rect(650, 210, 670, 305, 20);
+    text("Instructions", 50, 50);
+    fill(237, 34, 93, 250);
+    rect(100, 100, 500, 350, 20);
     fill(255, 255, 255);
     textSize(17);
-    text("Five ships are placed on each player's map, and the players take turns playing guess-fire on the other player's map until one of them sinks every ship to claim victory. If a player hits an opponent's ship, they gain an extra turn. BOT employs a probability density map to determine the ship's coordinates.\n\n\n  1. Press 'AUTO' to place your ships in a random order on the map. Press 'AUTO' again to change the order of your ships.\n  2. Click 'CONFIRM' to launch the game.\n  3. IMPORTANT: Online multiplayer is still in its infancy.", 720, 250, 550, 450);
+    text("Five ships are placed on each player's map, and the players take turns playing guess-fire on the other player's map until one of them sinks every ship to claim victory. If a player hits an opponent's ship, they gain an extra turn. BOT employs a probability density map to determine the ship's coordinates.\n\n\n  1. Press 'AUTO' to place your ships in a random order on the map. Press 'AUTO' again to change the order of your ships.\n  2. Click 'CONFIRM' to launch the game.\n  3. IMPORTANT: Online multiplayer is still in its infancy.", 125, 125, 450, 300);
 
     // Create button
-    background(104, 104, 145, 30);
-    var backButton = new button("      Back", 870, 570);
+
+    var backButton = new button("back", 225, 500);
     backButton.draw();
 
     // If the mouse is in the same place as the button
