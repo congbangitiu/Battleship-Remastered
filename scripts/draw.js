@@ -7,7 +7,7 @@ var posX = 400, posY = 70;
 var singlePlayerButton = new button("Singleplayer", posX + 475, posY + 150);
 var multiPlayerButton = new button(" Multiplayer", posX + 475, posY + 230);
 var instructionButton = new button(" Instructions", posX + 475, posY + 310);
-var statisticsButton = new button("  Statistics", posX + 475, posY + 390);
+var statisticsButton = new button("   Statistics", posX + 475, posY + 390);
 
 var animate = new animation();
 

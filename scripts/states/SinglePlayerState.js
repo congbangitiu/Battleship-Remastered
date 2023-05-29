@@ -1,5 +1,5 @@
 var singlePlayerState = function () {
-    var backButton1 = new button("    Back", 580, 650);
+    var backButton1 = new button("      Back", 580, 650);
     var DensityLensButtonOn = new button(" DensityLensON", 830, 650, 230);
     var DensityLensButtonOff = new button(" DensityLensOFF", 1140, 650, 240);
 
