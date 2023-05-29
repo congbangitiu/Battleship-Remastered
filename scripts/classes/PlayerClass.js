@@ -357,7 +357,6 @@ playerClass.prototype.play = function (playerRole) {
                             return 0;
                         }
 
-                        //player1.gridHidden[i-1][j-1]=-1;
                         mouseIsPressed = false;
                     }
                 }

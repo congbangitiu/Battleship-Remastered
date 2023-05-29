@@ -1,3 +1,4 @@
+// Using DFS with a number of island blocks being customizable to generate the random island
 var generateIslands = function (islandsCount) {
     var stack = {first: [], second: []};
 
@@ -8,6 +9,8 @@ var generateIslands = function (islandsCount) {
         var nodeX;
         var nodeY;
 
+        // If the stack is empty and there are islands left to generate,
+        // find a random coordinate that is not already an island.
         if (stack.first.length === 0 && islandsCount > 0) {
             while (randomMap[nodeX][nodeY] === ISLAND) {
                 nodeX = floor(random(0, 10));
@@ -17,25 +20,28 @@ var generateIslands = function (islandsCount) {
             stack.second.push(nodeY);
         }
 
+        // Pop the last coordinates from the stack.
         nodeX = stack.first.pop();
         nodeY = stack.second.pop();
 
+        // If the popped coordinates are already an island, continue to the next iteration.
         while (stack.first.length !== 0 && randomMap[nodeX][nodeY] === ISLAND) {
             nodeX = stack.first.pop();
             nodeY = stack.second.pop();
-
         }
 
         if (randomMap[nodeX][nodeY] === ISLAND) {
             continue;
         }
 
+        // Mark the current coordinates as an island on the randomMap.
         randomMap[nodeX][nodeY] = ISLAND;
 
         islandsCount--;
 
         var ar = [[], []];
 
+        // Check neighboring coordinates and add valid ones to the ar array.
         if (nodeX + 1 < 10 && randomMap[nodeX + 1][nodeY] !== ISLAND) {
             ar[0].push(nodeX + 1);
             ar[1].push(nodeY);
@@ -53,12 +59,14 @@ var generateIslands = function (islandsCount) {
             ar[1].push(nodeY - 1);
         }
 
+        // Randomly select a coordinate from the ar array.
         const randNumber = floor(random(0, ar[0].length));
 
         if (ar[0].length === 0) {
             continue;
         }
 
+        // Push the selected coordinate to the stack and remove it from the ar array.
         stack.first.push(ar[0][randNumber]);
         stack.second.push(ar[1][randNumber]);
 
