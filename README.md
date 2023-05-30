@@ -44,7 +44,7 @@
 ## Introduction <a name="Introduction"></a> :bricks:
 
 <div align="center">
-<img src="./assets/screenshots/Intro.gif" alt="">
+<img src="./assets/screenshots/intro.gif" alt="">
 </div>
 
 <div style="text-align:justify">
@@ -124,10 +124,44 @@ strategic planning and intuition, players can become masters of modern-day Battl
 <!-- FEATURES -->
 
 ## Features <a name="Features"></a>:joystick:
+### 1. Class Diagram
+<div align="center">
+    <img src="./assets/screenshots/class.png" alt="">
+</div>
+<br />
+  
+### 2. Use Case Diagram
+#### a. User Goals Use Case
+<div align="center">
+    <img src="./assets/screenshots/useruc.png" alt="">
+</div>
 
-- Completed: UX/UI, 2 players
-- Incompleted: Network playing
-  <br />
+#### b. Summary Goals Use Case
+<div align="center">
+    <img src="./assets/screenshots/summaryuc.png" alt="">
+</div>
+<br />
+
+### 3. Activity Diagram
+#### a. Select gameplay options
+<div align="center">
+    <img src="./assets/screenshots/option.png" alt="">
+</div>
+
+#### b. Generate blocks
+<div align="center">
+    <img src="./assets/screenshots/generate.png" alt="">
+</div>
+
+#### c. Transfer game states
+<div align="center">
+    <img src="./assets/screenshots/transfer.png" alt="">
+</div>
+
+#### d. Response automated after player's play steps
+<div align="center">
+    <img src="./assets/screenshots/response.png" alt="">
+</div>
 
 <!-- CHALLENGES -->
 
