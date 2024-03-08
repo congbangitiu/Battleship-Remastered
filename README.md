@@ -61,13 +61,13 @@ computer) once we finished coding made all the hard work completely worth it!
 
 ### Team Members :couplekiss_man_man:
 
-| Order |         Name          |     ID      |            Email            |                 Github account                  |                                                                  Facebook                                                                  |
-|:-----:|:---------------------:|:-----------:|:---------------------------:|:-----------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------:|
-|   1   | Nguyen Luan Cong Bang | ITITIU20163 | bangnguyen.071102@gmail.com | [congbangitiu](https://github.com/congbangitiu) |                                         [Công Bằng](https://www.facebook.com/congbang.nguyenluan)                                          |
-|   2   |     Pham Minh Vu      | ITDSIU20354 |     pmvu.ityu@gmail.com     |      [PMinhVu](https://github.com/PMinhVu)      | [Vu Pham](https://www.facebook.com/profile.php?id=100004748865639&comment_id=Y29tbWVudDoyNTE4MjA3Mjc4MzQ3NTQzXzgwNzk3Njg4MDc0OTcyNg%3D%3D) |
-|   3   |   Nguyen Quang Dieu   | ITDSIU20031 |     dieu5084@gmail.com      |   [itzmealvin](https://github.com/itzmealvin)   |                                      [Nguyen Quang Dieu](https://www.facebook.com/it.z.me.quangdieu)                                       |
-|   4   |  Nguyen Hoang Anh Tu  | ITDSIU20090 |     nghganhtu@gmail.com     |    [nghganhtu](https://github.com/nghganhtu)    |                                  [Joseph Nguyen](https://www.facebook.com/profile.php?id=100084848316418)                                  |
-|   5   |     Dang Nhat Huy     | ITITIU20043 |    dnhuy.ityu@gmail.com     |  [Nhathuy1305](https://github.com/Nhathuy1305)  |                                              [Nhật Huy](https://www.facebook.com/nhhuy.135/)                                               |
+| Order |         Name          |     ID      |            Email            |                 Github account                  |                            
+|:-----:|:---------------------:|:-----------:|:---------------------------:|:-----------------------------------------------:|
+|   1   | Nguyen Luan Cong Bang | ITITIU20163 | bangnguyen.071102@gmail.com | [congbangitiu](https://github.com/congbangitiu) |          
+|   2   |     Pham Minh Vu      | ITDSIU20354 |     pmvu.ityu@gmail.com     |      [PMinhVu](https://github.com/PMinhVu)      |
+|   3   |   Nguyen Quang Dieu   | ITDSIU20031 |     dieu5084@gmail.com      |   [itzmealvin](https://github.com/itzmealvin)   |                            
+|   4   |  Nguyen Hoang Anh Tu  | ITDSIU20090 |     nghganhtu@gmail.com     |    [nghganhtu](https://github.com/nghganhtu)    |                            
+|   5   |     Dang Nhat Huy     | ITITIU20043 |    dnhuy.ityu@gmail.com     |  [Nhathuy1305](https://github.com/Nhathuy1305)  |                            
 
 ### Installation :dart:
 
